@@ -1,5 +1,4 @@
 import varint
-from six import int2byte
 
 from .constants import NAME_TABLE, CODE_TABLE
 

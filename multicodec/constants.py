@@ -1,10 +1,11 @@
 CODECS = {
     # miscellaneous
-    'bin':                  {'prefix': 0x55, },
+    # disabling bin because its prefix collides with base2
+    # 'bin':                  {'prefix': 0x55, },
 
     # bases encodings
     'base1':                {'prefix': 0x01, },
-    # 'base2':                {'prefix': 0x55, },
+    'base2':                {'prefix': 0x55, },
     'base8':                {'prefix': 0x07, },
     'base10':               {'prefix': 0x09, },
 
