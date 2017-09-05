@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-"""Top-level package for python-multicodec."""
+"""Top-level package for py-multicodec."""
 
 __author__ = """Dhruv Baldawa"""
 __email__ = 'dhruv@dhruvb.com'

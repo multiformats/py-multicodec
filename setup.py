@@ -25,13 +25,13 @@ test_requirements = [
 ]
 
 setup(
-    name='python-multicodec',
+    name='py-multicodec',
     version='0.1.0',
     description="Multicodec implementation in Python",
     long_description=readme + '\n\n' + history,
     author="Dhruv Baldawa",
     author_email='dhruv@dhruvb.com',
-    url='https://github.com/dhruvbaldawa/python-multicodec',
+    url='https://github.com/dhruvbaldawa/py-multicodec',
     packages=find_packages(include=['multicodec']),
     include_package_data=True,
     install_requires=requirements,

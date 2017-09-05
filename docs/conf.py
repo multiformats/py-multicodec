@@ -55,7 +55,7 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'python-multicodec'
+project = u'py-multicodec'
 copyright = u"2017, Dhruv Baldawa"
 
 # The version info for the project you're documenting, acts as replacement
@@ -209,7 +209,7 @@ latex_elements = {
 # [howto/manual]).
 latex_documents = [
     ('index', 'multicodec.tex',
-     u'python-multicodec Documentation',
+     u'py-multicodec Documentation',
      u'Dhruv Baldawa', 'manual'),
 ]
 
@@ -240,7 +240,7 @@ latex_documents = [
 # (source start file, name, description, authors, manual section).
 man_pages = [
     ('index', 'multicodec',
-     u'python-multicodec Documentation',
+     u'py-multicodec Documentation',
      [u'Dhruv Baldawa'], 1)
 ]
 
@@ -255,7 +255,7 @@ man_pages = [
 #  dir menu entry, description, category)
 texinfo_documents = [
     ('index', 'multicodec',
-     u'python-multicodec Documentation',
+     u'py-multicodec Documentation',
      u'Dhruv Baldawa',
      'multicodec',
      'One line description of project.',

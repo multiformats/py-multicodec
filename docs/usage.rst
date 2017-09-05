@@ -2,6 +2,6 @@
 Usage
 =====
 
-To use python-multicodec in a project::
+To use py-multicodec in a project::
 
     import multicodec

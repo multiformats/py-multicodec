@@ -1,20 +1,20 @@
 =================
-python-multicodec
+py-multicodec
 =================
 
 
-.. image:: https://img.shields.io/pypi/v/python-multicodec.svg
-        :target: https://pypi.python.org/pypi/python-multicodec
+.. image:: https://img.shields.io/pypi/v/py-multicodec.svg
+        :target: https://pypi.python.org/pypi/py-multicodec
 
-.. image:: https://img.shields.io/travis/dhruvbaldawa/python-multicodec.svg
-        :target: https://travis-ci.org/dhruvbaldawa/python-multicodec
+.. image:: https://img.shields.io/travis/dhruvbaldawa/py-multicodec.svg
+        :target: https://travis-ci.org/dhruvbaldawa/py-multicodec
 
-.. image:: https://readthedocs.org/projects/python-multicodec/badge/?version=latest
-        :target: https://python-multicodec.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/py-multicodec/badge/?version=latest
+        :target: https://py-multicodec.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/dhruvbaldawa/python-multicodec/shield.svg
-     :target: https://pyup.io/repos/github/dhruvbaldawa/python-multicodec/
+.. image:: https://pyup.io/repos/github/dhruvbaldawa/py-multicodec/shield.svg
+     :target: https://pyup.io/repos/github/dhruvbaldawa/py-multicodec/
      :alt: Updates
 
 

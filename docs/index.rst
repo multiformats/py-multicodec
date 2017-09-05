@@ -1,4 +1,4 @@
-Welcome to python-multicodec's documentation!
+Welcome to py-multicodec's documentation!
 ======================================
 
 Contents:
