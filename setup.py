@@ -26,7 +26,7 @@ test_requirements = [
 
 setup(
     name='py-multicodec',
-    version='version='0.2.0'',
+    version='0.1.1',
     description="Multicodec implementation in Python",
     long_description=readme + '\n\n' + history,
     author="Dhruv Baldawa",
