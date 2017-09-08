@@ -9,6 +9,9 @@ py-multicodec
 .. image:: https://img.shields.io/travis/dhruvbaldawa/py-multicodec.svg
         :target: https://travis-ci.org/dhruvbaldawa/py-multicodec
 
+.. image:: https://codecov.io/gh/dhruvbaldawa/py-multicodec/branch/master/graph/badge.svg
+        :target: https://codecov.io/gh/dhruvbaldawa/py-multicodec
+
 .. image:: https://readthedocs.org/projects/py-multicodec/badge/?version=latest
         :target: https://py-multicodec.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
