@@ -7,4 +7,4 @@ __email__ = 'dhruv@dhruvb.com'
 __version__ = '0.1.0'
 
 
-from .multicodec import add_prefix, remove_prefix, get_codec  # noqa: F401
+from .multicodec import (add_prefix, remove_prefix, get_codec, get_prefix, is_codec, extract_prefix)  # noqa: F401
