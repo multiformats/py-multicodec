@@ -51,7 +51,7 @@ lint: ## check style with flake8
 	flake8 multicodec tests
 
 test: ## run tests quickly with the default Python
-	py.test --cov-report=html --cov-report=term-missing --cov-branch
+	py.test --cov=multicodec --cov-report=html --cov-report=term-missing --cov-branch
 
 
 test-all: ## run tests on every Python version with tox
