@@ -51,7 +51,7 @@ lint: ## check style with flake8
 	flake8 multicodec tests
 
 test: ## run tests quickly with the default Python
-	py.test
+	py.test --cov-report=html --cov-report=term-missing --cov-branch
 
 
 test-all: ## run tests on every Python version with tox
@@ -66,7 +66,6 @@ coverage: ## check code coverage quickly with the default Python
 docs: ## generate Sphinx HTML documentation, including API docs
 	rm -f docs/multicodec.rst
 	rm -f docs/modules.rst
-	sphinx-apidoc -o docs/ multicodec
 	$(MAKE) -C docs clean
 	$(MAKE) -C docs html
 	$(BROWSER) docs/_build/html/index.html
@@ -74,7 +73,10 @@ docs: ## generate Sphinx HTML documentation, including API docs
 servedocs: docs ## compile the docs watching for changes
 	watchmedo shell-command -p '*.rst;*.py' -c '$(MAKE) -C docs html' -R -D .
 
-release: clean ## package and upload a release
+verify_description:
+	python setup.py --long-description | rst2html.py > /dev/null
+
+release: clean verify_description ## package and upload a release
 	python setup.py sdist upload
 	python setup.py bdist_wheel upload
 

@@ -3,59 +3,80 @@ import varint
 from .constants import NAME_TABLE, CODE_TABLE
 
 
-class Multicodec(object):
-    @classmethod
-    def get_prefix(cls, multicodec):
-        try:
-            prefix = varint.encode(NAME_TABLE[multicodec])
-        except KeyError:
-            raise ValueError('{} multicodec is not supported.'.format(multicodec))
-        return prefix
+def extract_prefix(bytes_):
+    """
+    Extracts the prefix from multicodec prefixed data
 
-    @classmethod
-    def add_prefix(cls, multicodec, bytes_):
-        # @TODO: add type checking for bytes
-        prefix = cls.get_prefix(multicodec)
-        return b''.join([prefix, bytes_])
-
-    @classmethod
-    def extract_prefix(cls, bytes_):
-        return varint.decode_bytes(bytes_)
-
-    @classmethod
-    def remove_prefix(cls, bytes_):
-        prefix_int = cls.extract_prefix(bytes_)
-        prefix = varint.encode(prefix_int)
-        return bytes_[len(prefix):]
-
-    @classmethod
-    def get_codec(cls, bytes_):
-        prefix = cls.extract_prefix(bytes_)
-        try:
-            return CODE_TABLE[prefix]
-        except KeyError:
-            raise ValueError('Prefix {} not present in the lookup table'.format(prefix))
+    :param bytes bytes_: multicodec prefixed data
+    :return: prefix for the prefixed data
+    :rtype: bytes
+    """
+    return varint.decode_bytes(bytes_)
 
 
 def get_prefix(multicodec):
-    return Multicodec.get_prefix(multicodec)
+    """
+    Returns prefix for a given multicodec
+
+    :param str multicodec: multicodec codec name
+    :return: the prefix for the given multicodec
+    :rtype: byte
+    :raises ValueError: if an invalid multicodec name is provided
+    """
+    try:
+        prefix = varint.encode(NAME_TABLE[multicodec])
+    except KeyError:
+        raise ValueError('{} multicodec is not supported.'.format(multicodec))
+    return prefix
 
 
 def add_prefix(multicodec, bytes_):
-    return Multicodec.add_prefix(multicodec, bytes_)
+    """
+    Adds multicodec prefix to the given bytes input
+
+    :param str multicodec: multicodec to use for prefixing
+    :param bytes bytes_: data to prefix
+    :return: prefixed byte data
+    :rtype: bytes
+    """
+    prefix = get_prefix(multicodec)
+    return b''.join([prefix, bytes_])
 
 
 def remove_prefix(bytes_):
-    return Multicodec.remove_prefix(bytes_)
+    """
+    Removes prefix from a prefixed data
 
-
-def extract_prefix(bytes_):
-    return Multicodec.extract_prefix(bytes_)
+    :param bytes bytes_: multicodec prefixed data bytes
+    :return: prefix removed data bytes
+    :rtype: bytes
+    """
+    prefix_int = extract_prefix(bytes_)
+    prefix = varint.encode(prefix_int)
+    return bytes_[len(prefix):]
 
 
 def get_codec(bytes_):
-    return Multicodec.get_codec(bytes_)
+    """
+    Gets the codec used for prefix the multicodec prefixed data
+
+    :param bytes bytes_: multicodec prefixed data bytes
+    :return: name of the multicodec used to prefix
+    :rtype: str
+    """
+    prefix = extract_prefix(bytes_)
+    try:
+        return CODE_TABLE[prefix]
+    except KeyError:
+        raise ValueError('Prefix {} not present in the lookup table'.format(prefix))
 
 
 def is_codec(name):
+    """
+    Check if the codec is a valid codec or not
+
+    :param str name: name of the codec
+    :return: if the codec is valid or not
+    :rtype: bool
+    """
     return name in NAME_TABLE

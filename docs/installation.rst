@@ -12,7 +12,7 @@ To install py-multicodec, run this command in your terminal:
 
 .. code-block:: console
 
-    $ pip install multicodec
+    $ pip install py-multicodec
 
 This is the preferred method to install py-multicodec, as it will always install the most recent stable release.
 
