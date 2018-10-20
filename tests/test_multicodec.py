@@ -16,6 +16,7 @@ INVALID_CODECS = (
     ('deadbeef', 0xdeadbeef),
 )
 
+
 @pytest.mark.parametrize('multicodec,prefix', CODECS.items())
 def test_verify_prefix_complete(multicodec, prefix):
     data = b'testbytesbuffer'
@@ -46,3 +47,9 @@ def test_get_codec_invalid_prefix(_, prefix):
 @pytest.mark.parametrize('multicodec,_', INVALID_CODECS)
 def test_is_codec_invalid_prefix(multicodec, _):
     assert not is_codec(multicodec)
+
+
+def test_extract_prefix_invalid_varint():
+    with pytest.raises(ValueError) as excinfo:
+        extract_prefix(b'\xff')
+    assert 'incorrect varint provided' in str(excinfo.value)

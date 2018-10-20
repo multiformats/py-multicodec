@@ -4,19 +4,15 @@ py-multicodec
 .. image:: https://img.shields.io/pypi/v/py-multicodec.svg
         :target: https://pypi.python.org/pypi/py-multicodec
 
-.. image:: https://img.shields.io/travis/multiformats/py-multicodec.svg
-        :target: https://travis-ci.org/multiformats/py-multicodec
+.. image:: https://img.shields.io/travis/multiformats/py-multicodec.svg?branch=master
+        :target: https://travis-ci.org/multiformats/py-multicodec?branch=master
 
 .. image:: https://codecov.io/gh/multiformats/py-multicodec/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/multiformats/py-multicodec
 
-.. image:: https://readthedocs.org/projects/py-multicodec/badge/?version=latest
-        :target: https://py-multicodec.readthedocs.io/en/latest/?badge=latest
+.. image:: https://readthedocs.org/projects/py-multicodec/badge/?version=stable
+        :target: https://py-multicodec.readthedocs.io/en/stable/?badge=stable
         :alt: Documentation Status
-
-.. image:: https://pyup.io/repos/github/multiformats/py-multicodec/shield.svg
-     :target: https://pyup.io/repos/github/multiformats/py-multicodec/
-     :alt: Updates
 
 
 `Multicodec <https://github.com/multiformats/multicodec>`_ implementation in Python
@@ -30,6 +26,7 @@ You can check `the table here <https://github.com/multiformats/multicodec/blob/7
 
 * Free software: MIT license
 * Documentation: https://py-multicodec.readthedocs.io.
+* Python versions: 3.5, 3.6
 
 
 Installation
