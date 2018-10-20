@@ -12,9 +12,9 @@ with open('HISTORY.rst') as history_file:
     history = history_file.read()
 
 requirements = [
-    'varint==1.0.2',
-    'six==1.10.0',
-    'morphys==1.0',
+    'varint>=1.0.2,<2.0.0',
+    'six>=1.10.0,2.0',
+    'morphys>=1.0,2.0',
 ]
 
 setup_requirements = [

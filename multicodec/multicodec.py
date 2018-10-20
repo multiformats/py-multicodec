@@ -10,8 +10,12 @@ def extract_prefix(bytes_):
     :param bytes bytes_: multicodec prefixed data
     :return: prefix for the prefixed data
     :rtype: bytes
+    :raises ValueError: when incorrect varint is provided
     """
-    return varint.decode_bytes(bytes_)
+    try:
+        return varint.decode_bytes(bytes_)
+    except TypeError:
+        raise ValueError('incorrect varint provided')
 
 
 def get_prefix(multicodec):
