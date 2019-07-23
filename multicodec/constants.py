@@ -150,6 +150,7 @@ CODECS = {
     'ws':                   {'prefix': 0x01DD, },
     'onion':                {'prefix': 0x01BC, },
     'p2p-circuit':          {'prefix': 0x0122, },
+    'zeronet':              {'prefix': 0x1000, },
 
     # IPLD formats
     'dag-pb':               {'prefix': 0x70, },
