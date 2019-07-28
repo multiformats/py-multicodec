@@ -430,7 +430,7 @@ CODECS = {
     'ipfs-ns':              {'prefix': 0xe3, },
     'swarm-ns':             {'prefix': 0xe4, },
     'ipns-ns':              {'prefix': 0xe5, },
-    'zeronet':              {'prefix': 0x1000, },
+    'zeronet':              {'prefix': 0xe6, },
 
     # key
     'ed25519-pub':          {'prefix': 0xed, },
