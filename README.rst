@@ -52,3 +52,14 @@ Sample Usage
     >>> # get codec used to prefix the prefixed data
     >>> get_codec(b'\x12EiC5TSe5k00')
     'sha2-256'
+
+Updating the lookup table
+==========================
+
+Updating the lookup table is done with a script. The source of truth is the
+`multicodec default table <https://github.com/multiformats/multicodec/blob/master/table.csv>`_.
+Update the table with running:
+
+.. code-block:: shell
+
+    $ curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv | ./tools/update-table.py
