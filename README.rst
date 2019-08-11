@@ -44,7 +44,7 @@ Sample Usage
 
     >>> from multicodec import add_prefix, remove_prefix, get_codec
     >>> # adding a prefix to existing data
-    >>> add_prefix('sha2-256', 'EiC5TSe5k00')
+    >>> add_prefix('sha2-256', b'EiC5TSe5k00')
     b'\x12EiC5TSe5k00'
     >>> # removing prefix from prefixed data
     >>> remove_prefix(b'\x12EiC5TSe5k00')
