@@ -29,6 +29,17 @@ def test_verify_prefix_complete(multicodec, prefix):
     assert extract_prefix(prefixed_data) == prefix_int
 
 
+@pytest.mark.parametrize('multicodec', (0x300000, 0x3FFFFF,))
+def test_verify_private_range_complete(multicodec):
+    data = b'testbytesbuffer'
+    prefix_int = multicodec
+    prefixed_data = add_prefix(multicodec, data)
+
+    assert get_codec(prefixed_data) == multicodec
+    assert remove_prefix(prefixed_data) == data
+    assert extract_prefix(prefixed_data) == prefix_int
+
+
 @pytest.mark.parametrize('multicodec,_', INVALID_CODECS)
 def test_get_prefix_invalid_prefix(multicodec, _):
     with pytest.raises(ValueError) as excinfo:

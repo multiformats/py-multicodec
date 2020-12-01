@@ -1,6 +1,6 @@
 import varint
 
-from .constants import NAME_TABLE, CODE_TABLE
+from .constants import NAME_TABLE, CODE_TABLE, PRIVATE_RANGE
 
 
 def extract_prefix(bytes_):
@@ -22,11 +22,14 @@ def get_prefix(multicodec):
     """
     Returns prefix for a given multicodec
 
-    :param str multicodec: multicodec codec name
+    :param str / int multicodec: str for multicodec name, int if you wish to use a private code
     :return: the prefix for the given multicodec
     :rtype: byte
     :raises ValueError: if an invalid multicodec name is provided
     """
+    if is_private_codec(multicodec):
+        return varint.encode(multicodec)
+
     try:
         prefix = varint.encode(NAME_TABLE[multicodec])
     except KeyError:
@@ -38,7 +41,7 @@ def add_prefix(multicodec, bytes_):
     """
     Adds multicodec prefix to the given bytes input
 
-    :param str multicodec: multicodec to use for prefixing
+    :param str / int multicodec: str for multicodec to use for prefixing, int if you wish to use a private code
     :param bytes bytes_: data to prefix
     :return: prefixed byte data
     :rtype: bytes
@@ -65,14 +68,30 @@ def get_codec(bytes_):
     Gets the codec used for prefix the multicodec prefixed data
 
     :param bytes bytes_: multicodec prefixed data bytes
-    :return: name of the multicodec used to prefix
-    :rtype: str
+    :return: name of the multicodec used to prefix, int codec if it is part of private space
+    :rtype: str / int
     """
     prefix = extract_prefix(bytes_)
+    if is_private_codec(prefix):
+        return prefix
+
     try:
         return CODE_TABLE[prefix]
     except KeyError:
         raise ValueError('Prefix {} not present in the lookup table'.format(prefix))
+
+
+def is_private_codec(codec):
+    """
+    Check if the codec is within the private range or not
+
+    :param int codec: codec to check for permitted to use under private space
+    :return: True if the codec lies within the private usage range, False otherwise
+    :rtype: bool
+    """
+    if isinstance(codec, int) and PRIVATE_RANGE[0] <= codec <= PRIVATE_RANGE[1]:
+        return True
+    return False
 
 
 def is_codec(name):

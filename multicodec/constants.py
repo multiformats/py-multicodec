@@ -446,3 +446,4 @@ CODECS = {
 
 NAME_TABLE = {name: value['prefix'] for name, value in CODECS.items()}
 CODE_TABLE = {value['prefix']: name for name, value in CODECS.items()}
+PRIVATE_RANGE = (0x300000, 0x3FFFFF)
