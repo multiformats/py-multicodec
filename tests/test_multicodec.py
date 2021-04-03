@@ -11,7 +11,7 @@ from multicodec.constants import CODECS
 
 
 INVALID_CODECS = (
-    ('abc', 0x02),
+    ('abc', 0x101),
     ('def', 0xfffff),
     ('deadbeef', 0xdeadbeef),
 )
