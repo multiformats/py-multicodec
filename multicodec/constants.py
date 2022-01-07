@@ -4,17 +4,18 @@
 CODECS = {
     # serialization
     'protobuf':                     {'prefix': 0x50, },
-    'cbor':                         {'prefix': 0x51, },
     'rlp':                          {'prefix': 0x60, },
     'bencode':                      {'prefix': 0x63, },
-    'json':                         {'prefix': 0x0200, },
     'messagepack':                  {'prefix': 0x0201, },
+    'car-index-sorted':             {'prefix': 0x0400, },
+    'car-multihash-index-sorted':   {'prefix': 0x0401, },
 
     # multiformat
     'multicodec':                   {'prefix': 0x30, },
     'multihash':                    {'prefix': 0x31, },
     'multiaddr':                    {'prefix': 0x32, },
     'multibase':                    {'prefix': 0x33, },
+    'caip-50':                      {'prefix': 0xca, },
 
     # multihash
     'identity':                     {'prefix': 0x00, },
@@ -32,13 +33,18 @@ CODECS = {
     'keccak-384':                   {'prefix': 0x1c, },
     'keccak-512':                   {'prefix': 0x1d, },
     'blake3':                       {'prefix': 0x1e, },
-    'murmur3-128':                  {'prefix': 0x22, },
+    'sha2-384':                     {'prefix': 0x20, },
+    'murmur3-x64-64':               {'prefix': 0x22, },
     'murmur3-32':                   {'prefix': 0x23, },
     'dbl-sha2-256':                 {'prefix': 0x56, },
     'md4':                          {'prefix': 0xd4, },
     'md5':                          {'prefix': 0xd5, },
     'bmt':                          {'prefix': 0xd6, },
     'sha2-256-trunc254-padded':     {'prefix': 0x1012, },
+    'sha2-224':                     {'prefix': 0x1013, },
+    'sha2-512-224':                 {'prefix': 0x1014, },
+    'sha2-512-256':                 {'prefix': 0x1015, },
+    'murmur3-x64-128':              {'prefix': 0x1022, },
     'ripemd-128':                   {'prefix': 0x1052, },
     'ripemd-160':                   {'prefix': 0x1053, },
     'ripemd-256':                   {'prefix': 0x1054, },
@@ -396,16 +402,16 @@ CODECS = {
     'garlic64':                     {'prefix': 0x01be, },
     'garlic32':                     {'prefix': 0x01bf, },
     'tls':                          {'prefix': 0x01c0, },
+    'noise':                        {'prefix': 0x01c6, },
     'quic':                         {'prefix': 0x01cc, },
     'ws':                           {'prefix': 0x01dd, },
     'wss':                          {'prefix': 0x01de, },
     'p2p-websocket-star':           {'prefix': 0x01df, },
     'http':                         {'prefix': 0x01e0, },
+    'plaintextv2':                  {'prefix': 0x706c61, },
 
     # ipld
-    'cidv1':                        {'prefix': 0x01, },
-    'cidv2':                        {'prefix': 0x02, },
-    'cidv3':                        {'prefix': 0x03, },
+    'cbor':                         {'prefix': 0x51, },
     'raw':                          {'prefix': 0x55, },
     'dag-pb':                       {'prefix': 0x70, },
     'dag-cbor':                     {'prefix': 0x71, },
@@ -427,6 +433,8 @@ CODECS = {
     'eth-state-trie':               {'prefix': 0x96, },
     'eth-account-snapshot':         {'prefix': 0x97, },
     'eth-storage-trie':             {'prefix': 0x98, },
+    'eth-receipt-log-trie':         {'prefix': 0x99, },
+    'eth-reciept-log':              {'prefix': 0x9a, },
     'bitcoin-block':                {'prefix': 0xb0, },
     'bitcoin-tx':                   {'prefix': 0xb1, },
     'bitcoin-witness-commitment':   {'prefix': 0xb2, },
@@ -441,18 +449,27 @@ CODECS = {
     'swarm-manifest':               {'prefix': 0xfa, },
     'swarm-feed':                   {'prefix': 0xfb, },
     'dag-json':                     {'prefix': 0x0129, },
+    'swhid-1-snp':                  {'prefix': 0x01f0, },
+    'json':                         {'prefix': 0x0200, },
 
     # namespace
     'path':                         {'prefix': 0x2f, },
-    'docid':                        {'prefix': 0xce, },
+    'streamid':                     {'prefix': 0xce, },
     'ipld-ns':                      {'prefix': 0xe2, },
     'ipfs-ns':                      {'prefix': 0xe3, },
     'swarm-ns':                     {'prefix': 0xe4, },
     'ipns-ns':                      {'prefix': 0xe5, },
     'zeronet':                      {'prefix': 0xe6, },
     'skynet-ns':                    {'prefix': 0xb19910, },
+    'arweave-ns':                   {'prefix': 0xb29910, },
+    'subspace-ns':                  {'prefix': 0xb39910, },
 
     # key
+    'aes-128':                      {'prefix': 0xa0, },
+    'aes-192':                      {'prefix': 0xa1, },
+    'aes-256':                      {'prefix': 0xa2, },
+    'chacha-128':                   {'prefix': 0xa3, },
+    'chacha-256':                   {'prefix': 0xa4, },
     'secp256k1-pub':                {'prefix': 0xe7, },
     'bls12_381-g1-pub':             {'prefix': 0xea, },
     'bls12_381-g2-pub':             {'prefix': 0xeb, },
@@ -464,7 +481,10 @@ CODECS = {
     'p521-pub':                     {'prefix': 0x1202, },
     'ed448-pub':                    {'prefix': 0x1203, },
     'x448-pub':                     {'prefix': 0x1204, },
+    'rsa-pub':                      {'prefix': 0x1205, },
     'ed25519-priv':                 {'prefix': 0x1300, },
+    'secp256k1-priv':               {'prefix': 0x1301, },
+    'x25519-priv':                  {'prefix': 0x1302, },
 
     # holochain
     'holochain-adr-v0':             {'prefix': 0x807124, },
@@ -474,8 +494,14 @@ CODECS = {
     'holochain-sig-v0':             {'prefix': 0xa27124, },
     'holochain-sig-v1':             {'prefix': 0xa37124, },
 
+    # cid
+    'cidv1':                        {'prefix': 0x01, },
+    'cidv2':                        {'prefix': 0x02, },
+    'cidv3':                        {'prefix': 0x03, },
+
     # libp2p
     'libp2p-peer-record':           {'prefix': 0x0301, },
+    'libp2p-relay-rsvp':            {'prefix': 0x0302, },
 
     # zeroxcert
     'zeroxcert-imprint-256':        {'prefix': 0xce11, },
