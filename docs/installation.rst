@@ -44,7 +44,13 @@ Once you have a copy of the source, you can install it with:
 
 .. code-block:: console
 
-    $ python setup.py install
+    $ pip install -e .
+
+For development, install with dev dependencies:
+
+.. code-block:: console
+
+    $ pip install -e ".[dev]"
 
 
 .. _Github repo: https://github.com/multiformats/py-multicodec

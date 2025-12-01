@@ -1,17 +1,19 @@
 .. include:: ../README.rst
 
+
 Table of contents
 =================
 
 .. toctree::
-    :maxdepth: 2
+   :maxdepth: 2
 
-    index
-    installation
-    api_reference
-    contributing
-    authors
-    history
+   installation
+   usage
+   api_reference
+   modules
+   contributing
+   authors
+   history
 
 Indices and tables
 ==================

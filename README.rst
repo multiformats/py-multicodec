@@ -1,14 +1,11 @@
-**This project is no longer maintained and has been archived.**
-
-
 py-multicodec
 -------------
 
 .. image:: https://img.shields.io/pypi/v/py-multicodec.svg
         :target: https://pypi.python.org/pypi/py-multicodec
 
-.. image:: https://img.shields.io/travis/multiformats/py-multicodec.svg?branch=master
-        :target: https://travis-ci.org/multiformats/py-multicodec?branch=master
+.. image:: https://github.com/multiformats/py-multicodec/actions/workflows/tox.yml/badge.svg?branch=master
+        :target: https://github.com/multiformats/py-multicodec/actions/workflows/tox.yml
 
 .. image:: https://codecov.io/gh/multiformats/py-multicodec/branch/master/graph/badge.svg
         :target: https://codecov.io/gh/multiformats/py-multicodec
@@ -29,7 +26,7 @@ You can check `the table here <https://github.com/multiformats/multicodec/blob/9
 
 * Free software: MIT license
 * Documentation: https://py-multicodec.readthedocs.io.
-* Python versions: 3.5, 3.6
+* Python versions: 3.10, 3.11, 3.12, 3.13, 3.14
 
 
 Installation
