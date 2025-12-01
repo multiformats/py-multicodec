@@ -59,38 +59,77 @@ Get Started!
 
 Ready to contribute? Here's how to set up `multicodec` for local development.
 
-1. Fork the `multicodec` repo on GitHub.
+1. Fork the `py-multicodec` repo on GitHub.
 2. Clone your fork locally::
 
-    $ git clone git@github.com:your_name_here/multicodec.git
+    $ git clone git@github.com:your_name_here/py-multicodec.git
 
-3. Install your local copy into a virtualenv. Assuming you have virtualenvwrapper installed, this is how you set up your fork for local development::
+3. Install your local copy into a virtualenv. Create and activate a virtual environment::
 
-    $ mkvirtualenv multicodec
-    $ cd multicodec/
-    $ python setup.py develop
+    $ python -m venv venv
+    $ source venv/bin/activate  # On Windows: venv\Scripts\activate
+    $ pip install -e ".[dev]"
 
-4. Create a branch for local development::
+4. Install pre-commit hooks (optional but recommended)::
+
+    $ pre-commit install
+
+   This will set up git hooks to automatically run linting and formatting checks
+   before each commit.
+
+5. Create a branch for local development::
 
     $ git checkout -b name-of-your-bugfix-or-feature
 
    Now you can make your changes locally.
 
-5. When you're done making changes, check that your changes pass flake8 and the tests, including testing other Python versions with tox::
+6. When you're done making changes, check that your changes pass linting and the
+   tests, including testing other Python versions with tox::
 
-    $ flake8 multicodec tests
-    $ python setup.py test or py.test
+    $ make lint
+    $ make test
     $ tox
 
-   To get flake8 and tox, just pip install them into your virtualenv.
+   Or run pre-commit manually on all files::
 
-6. Commit your changes and push your branch to GitHub::
+    $ pre-commit run --all-files
+
+   If you installed pre-commit hooks (step 4), they will run automatically on commit.
+
+Development Workflow Commands
+-------------------------------
+
+The project provides several ``make`` targets to help with development:
+
+* ``make fix`` - Automatically fix formatting and linting issues using ruff.
+  Use this when you want to auto-fix code style issues.
+
+* ``make lint`` - Run all pre-commit hooks on all files to check for code quality
+  issues. This includes YAML/TOML validation, trailing whitespace checks, pyupgrade,
+  ruff linting and formatting, and mypy type checking.
+
+* ``make typecheck`` - Run mypy type checking only. Use this when you want to
+  quickly check for type errors without running all other checks.
+
+* ``make test`` - Run the test suite with pytest using the default Python version.
+  For testing across multiple Python versions, use ``tox`` instead.
+
+* ``make pr`` - Run a complete pre-PR check: clean build artifacts, fix formatting,
+  run linting, type checking, and tests. This is the recommended command to run
+  before submitting a pull request.
+
+* ``make coverage`` - Run tests with coverage reporting and open the HTML report
+  in your browser.
+
+For a full list of available commands, run ``make help``.
+
+7. Commit your changes and push your branch to GitHub::
 
     $ git add .
     $ git commit -m "Your detailed description of your changes."
-    $ git push origin name-of-your-bugfix-or-feature
+    $ git push -u origin name-of-your-bugfix-or-feature
 
-7. Submit a pull request through the GitHub website.
+8. Submit a pull request through the GitHub website.
 
 Pull Request Guidelines
 -----------------------
@@ -101,8 +140,8 @@ Before you submit a pull request, check that it meets these guidelines:
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
-3. The pull request should work for Python 2.6, 2.7, 3.3, 3.4 and 3.5, and for PyPy. Check
-   https://travis-ci.org/multiformats/py-multicodec/pull_requests
+3. The pull request should work for Python 3.10, 3.11, 3.12, 3.13, and 3.14. Check
+   https://github.com/multiformats/py-multicodec/actions
    and make sure that the tests pass for all supported Python versions.
 
 Tips
@@ -110,5 +149,8 @@ Tips
 
 To run a subset of tests::
 
-$ py.test tests.test_multicodec
+    $ pytest tests/test_multicodec.py
 
+To run tests with coverage::
+
+    $ make coverage

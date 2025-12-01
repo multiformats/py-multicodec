@@ -1,40 +1,40 @@
 import varint
 
-from .constants import NAME_TABLE, CODE_TABLE
+from .constants import CODE_TABLE, NAME_TABLE
 
 
-def extract_prefix(bytes_):
+def extract_prefix(bytes_: bytes) -> int:
     """
     Extracts the prefix from multicodec prefixed data
 
     :param bytes bytes_: multicodec prefixed data
     :return: prefix for the prefixed data
-    :rtype: bytes
+    :rtype: int
     :raises ValueError: when incorrect varint is provided
     """
     try:
         return varint.decode_bytes(bytes_)
-    except TypeError:
-        raise ValueError('incorrect varint provided')
+    except TypeError as err:
+        raise ValueError("incorrect varint provided") from err
 
 
-def get_prefix(multicodec):
+def get_prefix(multicodec: str) -> bytes:
     """
     Returns prefix for a given multicodec
 
     :param str multicodec: multicodec codec name
     :return: the prefix for the given multicodec
-    :rtype: byte
+    :rtype: bytes
     :raises ValueError: if an invalid multicodec name is provided
     """
     try:
         prefix = varint.encode(NAME_TABLE[multicodec])
-    except KeyError:
-        raise ValueError('{} multicodec is not supported.'.format(multicodec))
+    except KeyError as err:
+        raise ValueError(f"{multicodec} multicodec is not supported.") from err
     return prefix
 
 
-def add_prefix(multicodec, bytes_):
+def add_prefix(multicodec: str, bytes_: bytes) -> bytes:
     """
     Adds multicodec prefix to the given bytes input
 
@@ -44,10 +44,10 @@ def add_prefix(multicodec, bytes_):
     :rtype: bytes
     """
     prefix = get_prefix(multicodec)
-    return b''.join([prefix, bytes_])
+    return b"".join([prefix, bytes_])
 
 
-def remove_prefix(bytes_):
+def remove_prefix(bytes_: bytes) -> bytes:
     """
     Removes prefix from a prefixed data
 
@@ -57,10 +57,10 @@ def remove_prefix(bytes_):
     """
     prefix_int = extract_prefix(bytes_)
     prefix = varint.encode(prefix_int)
-    return bytes_[len(prefix):]
+    return bytes_[len(prefix) :]
 
 
-def get_codec(bytes_):
+def get_codec(bytes_: bytes) -> str:
     """
     Gets the codec used for prefix the multicodec prefixed data
 
@@ -71,11 +71,11 @@ def get_codec(bytes_):
     prefix = extract_prefix(bytes_)
     try:
         return CODE_TABLE[prefix]
-    except KeyError:
-        raise ValueError('Prefix {} not present in the lookup table'.format(prefix))
+    except KeyError as err:
+        raise ValueError(f"Prefix {prefix} not present in the lookup table") from err
 
 
-def is_codec(name):
+def is_codec(name: str) -> bool:
     """
     Check if the codec is a valid codec or not
 
