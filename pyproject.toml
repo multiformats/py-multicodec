@@ -38,7 +38,7 @@ dev = [
     "bump-my-version>=1.2.0",
     "codecov",
     "coverage>=6.5.0",
-    "cryptography==44.0.1",
+    "cryptography>=44.0.1,<47.0.0",
     "mypy",
     "pre-commit",
     "pytest",
