@@ -12,7 +12,7 @@ import ast
 from pathlib import Path
 
 
-def load_codecs_from_file():
+def load_codecs_from_file() -> dict[str, dict[str, int]]:
     """Load CODECS dict from constants.py without importing."""
     constants_path = Path(__file__).parent.parent / "multicodec" / "constants.py"
     content = constants_path.read_text()
