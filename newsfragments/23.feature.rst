@@ -1,0 +1,1 @@
+Added Codec constants, List all codecs function and Reserved range support for Codec management.

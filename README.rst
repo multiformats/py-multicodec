@@ -53,6 +53,33 @@ Sample Usage
     >>> get_codec(b'\x12EiC5TSe5k00')
     'sha2-256'
 
+Code Management
+===============
+
+In addition to the basic prefix operations, py-multicodec provides type-safe codec
+management functionality:
+
+.. code-block:: python
+
+    >>> from multicodec import Code, known_codes
+    >>> from multicodec.code_table import SHA2_256, DAG_CBOR
+
+    >>> # Use named constants for type-safe codec handling
+    >>> code = SHA2_256
+    >>> str(code)
+    'sha2-256'
+    >>> int(code)
+    18
+
+    >>> # Create Code from string (name or hex)
+    >>> code = Code.from_string("sha2-256")
+    >>> code = Code.from_string("0x12")  # hex also works
+
+    >>> # List all known codecs
+    >>> all_codes = known_codes()
+    >>> len(all_codes)
+    460
+
 Updating the lookup table
 ==========================
 
