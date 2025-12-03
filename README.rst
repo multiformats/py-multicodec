@@ -54,7 +54,7 @@ Sample Usage
     'sha2-256'
 
 Code Management
-==============
+===============
 
 In addition to the basic prefix operations, py-multicodec provides type-safe codec
 management functionality:
