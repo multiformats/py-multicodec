@@ -1,0 +1,1 @@
+Added serialization with JSON/raw codecs, custom codec interface, encode/decode functions, and a dynamic codec registry.

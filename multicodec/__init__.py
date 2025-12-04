@@ -13,23 +13,68 @@ from .code import (
     known_codes,
 )
 
+# Exceptions
+from .exceptions import (
+    CodecError,
+    DecodeError,
+    EncodeError,
+    MulticodecError,
+    UnknownCodecError,
+)
+
 # Original multicodec functions
 from .multicodec import add_prefix, extract_prefix, get_codec, get_prefix, is_codec, remove_prefix
 
+# Serialization support
+from .serialization import (
+    Codec,
+    JSONCodec,
+    RawCodec,
+    decode,
+    encode,
+    get_registered_codec,
+    is_codec_registered,
+    json_codec,
+    list_registered_codecs,
+    raw_codec,
+    register_codec,
+    unregister_codec,
+)
+
 __all__ = [
-    "RESERVED_END",
     # Constants
+    "RESERVED_END",
     "RESERVED_START",
     # Code type
     "Code",
+    # Serialization base classes
+    "Codec",
+    "CodecError",
+    "DecodeError",
+    "EncodeError",
+    # Built-in codecs
+    "JSONCodec",
+    # Exceptions
+    "MulticodecError",
+    "RawCodec",
+    "UnknownCodecError",
     # Original functions
     "add_prefix",
+    "decode",
+    # Serialization functions
+    "encode",
     "extract_prefix",
     "get_codec",
     "get_prefix",
+    "get_registered_codec",
     "is_codec",
+    "is_codec_registered",
     "is_reserved",
-    # Functions
+    "json_codec",
     "known_codes",
+    "list_registered_codecs",
+    "raw_codec",
+    "register_codec",
     "remove_prefix",
+    "unregister_codec",
 ]
