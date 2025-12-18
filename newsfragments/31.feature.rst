@@ -1,0 +1,1 @@
+Updated codec table from official multicodec repository to include all 603 codecs (up from 460). This adds many previously missing codecs including hash functions (sha2-384, sha2-224, murmur3-x64 variants), encryption algorithms (aes-128/192/256, chacha variants), network protocols (noise, quic-v1, webrtc), and many others. Addresses gap analysis from discussion #1063.
