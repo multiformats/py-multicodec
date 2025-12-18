@@ -4,14 +4,14 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "py-multicodec"
-version = "0.2.1"
+version = "1.0.0"
 description = "Multicodec implementation in Python"
 readme = "README.rst"
 authors = [{ name = "Dhruv Baldawa", email = "dhruv@dhruvb.com" }]
 license = { text = "MIT" }
 keywords = ["multicodec", "multiformats", "CID", "IPFS", "IPLD"]
 classifiers = [
-    "Development Status :: 4 - Beta",
+    "Development Status :: 5 - Production/Stable",
     "Intended Audience :: Developers",
     "License :: OSI Approved :: MIT License",
     "Natural Language :: English",
@@ -29,7 +29,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/multiformats/py-multicodec"
-Download = "https://github.com/multiformats/py-multicodec/tarball/0.2.1"
+Download = "https://github.com/multiformats/py-multicodec/tarball/1.0.0"
 
 [project.optional-dependencies]
 dev = [
@@ -116,7 +116,7 @@ name = "Removals"
 showcontent = true
 
 [tool.bumpversion]
-current_version = "0.2.1"
+current_version = "1.0.0"
 parse = """
     (?P<major>\\d+)
     \\.(?P<minor>\\d+)
