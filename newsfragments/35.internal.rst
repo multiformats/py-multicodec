@@ -1,0 +1,1 @@
+Updated contributing docs and docs config with current release process.
