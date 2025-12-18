@@ -118,9 +118,6 @@ The project provides several ``make`` targets to help with development:
   run linting, type checking, and tests. This is the recommended command to run
   before submitting a pull request.
 
-* ``make coverage`` - Run tests with coverage reporting and open the HTML report
-  in your browser.
-
 For a full list of available commands, run ``make help``.
 
 7. Commit your changes and push your branch to GitHub::
@@ -150,7 +147,3 @@ Tips
 To run a subset of tests::
 
     $ pytest tests/test_multicodec.py
-
-To run tests with coverage::
-
-    $ make coverage
