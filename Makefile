@@ -69,7 +69,6 @@ docs-ci:
 	rm -f docs/modules.rst
 	sphinx-apidoc -o docs/ multicodec
 	$(MAKE) -C docs clean
-	mkdir -p docs/_static
 	$(MAKE) -C docs html SPHINXOPTS="-W"
 
 docs: docs-ci
