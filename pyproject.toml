@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "py-multicodec"
-version = "1.0.0"
+version = "0.2.1"
 description = "Multicodec implementation in Python"
 readme = "README.rst"
 authors = [{ name = "Dhruv Baldawa", email = "dhruv@dhruvb.com" }]
@@ -29,7 +29,7 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/multiformats/py-multicodec"
-Download = "https://github.com/multiformats/py-multicodec/tarball/1.0.0"
+Download = "https://github.com/multiformats/py-multicodec/tarball/0.2.1"
 
 [project.optional-dependencies]
 dev = [
@@ -116,7 +116,7 @@ name = "Removals"
 showcontent = true
 
 [tool.bumpversion]
-current_version = "1.0.0"
+current_version = "0.2.1"
 parse = """
     (?P<major>\\d+)
     \\.(?P<minor>\\d+)
@@ -144,8 +144,8 @@ replace = "version = \"{new_version}\""
 
 [[tool.bumpversion.files]]
 filename = "multicodec/__init__.py"
-search = "__version__ = '{current_version}'"
-replace = "__version__ = '{new_version}'"
+search = "__version__ = \"{current_version}\""
+replace = "__version__ = \"{new_version}\""
 
 [[tool.bumpversion.files]]
 filename = "pyproject.toml"
