@@ -1,6 +1,5 @@
 .. include:: ../README.rst
 
-
 Table of contents
 =================
 
