@@ -7,9 +7,6 @@ py-multicodec
 .. image:: https://github.com/multiformats/py-multicodec/actions/workflows/tox.yml/badge.svg?branch=master
         :target: https://github.com/multiformats/py-multicodec/actions/workflows/tox.yml
 
-.. image:: https://codecov.io/gh/multiformats/py-multicodec/branch/master/graph/badge.svg
-        :target: https://codecov.io/gh/multiformats/py-multicodec
-
 .. image:: https://readthedocs.org/projects/py-multicodec/badge/?version=stable
         :target: https://py-multicodec.readthedocs.io/en/stable/?badge=stable
         :alt: Documentation Status
