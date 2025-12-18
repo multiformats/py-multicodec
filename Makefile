@@ -113,7 +113,7 @@ notes: check-bump validate-newsfragments
 
 release: check-bump check-git clean
 	# verify that notes command ran correctly
-	./newsfragments/validate_files.py is-empty
+	python ./newsfragments/validate_files.py is-empty
 	CURRENT_SIGN_SETTING=$(git config commit.gpgSign)
 	git config commit.gpgSign true
 	bump-my-version bump $(bump)
@@ -130,8 +130,8 @@ ifndef bump
 endif
 
 check-git:
-	# require that upstream is configured for multiformats/py-multihash
+	# require that upstream is configured for multiformats/py-multicodec
 	@if ! git remote -v | grep "upstream[[:space:]]git@github.com:multiformats/py-multicodec.git (push)\|upstream[[:space:]]https://github.com/multiformats/py-multicodec (push)"; then \
-		echo "Error: You must have a remote named 'upstream' that points to 'py-multihash'"; \
+		echo "Error: You must have a remote named 'upstream' that points to 'py-multicodec'"; \
 		exit 1; \
 	fi

@@ -1,1 +1,0 @@
-Modernized repository infrastructure to use pyproject.toml, GitHub Actions CI/CD, Python 3.10+ support, ruff for linting/formatting, and pre-commit hooks.
