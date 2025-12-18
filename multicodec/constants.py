@@ -6,20 +6,41 @@ CODECS = {
     "protobuf": {
         "prefix": 0x50,
     },
-    "cbor": {
-        "prefix": 0x51,
-    },
     "rlp": {
         "prefix": 0x60,
     },
     "bencode": {
         "prefix": 0x63,
     },
-    "json": {
-        "prefix": 0x0200,
-    },
     "messagepack": {
         "prefix": 0x0201,
+    },
+    "car": {
+        "prefix": 0x0202,
+    },
+    "x509-certificate": {
+        "prefix": 0x0210,
+    },
+    "ipns-record": {
+        "prefix": 0x0300,
+    },
+    "car-index-sorted": {
+        "prefix": 0x0400,
+    },
+    "car-multihash-index-sorted": {
+        "prefix": 0x0401,
+    },
+    "provenance-log": {
+        "prefix": 0x1208,
+    },
+    "provenance-log-entry": {
+        "prefix": 0x1209,
+    },
+    "provenance-log-script": {
+        "prefix": 0x120A,
+    },
+    "ssz": {
+        "prefix": 0xB501,
     },
     # multiformat
     "multicodec": {
@@ -33,6 +54,21 @@ CODECS = {
     },
     "multibase": {
         "prefix": 0x33,
+    },
+    "varsig": {
+        "prefix": 0x34,
+    },
+    "caip-50": {
+        "prefix": 0xCA,
+    },
+    "multidid": {
+        "prefix": 0x0D1D,
+    },
+    "multisig": {
+        "prefix": 0x1239,
+    },
+    "multikey": {
+        "prefix": 0x123A,
     },
     # multihash
     "identity": {
@@ -80,11 +116,8 @@ CODECS = {
     "blake3": {
         "prefix": 0x1E,
     },
-    "murmur3-128": {
-        "prefix": 0x22,
-    },
-    "murmur3-32": {
-        "prefix": 0x23,
+    "sha2-384": {
+        "prefix": 0x20,
     },
     "dbl-sha2-256": {
         "prefix": 0x56,
@@ -95,11 +128,20 @@ CODECS = {
     "md5": {
         "prefix": 0xD5,
     },
-    "bmt": {
-        "prefix": 0xD6,
+    "fr32-sha256-trunc254-padbintree": {
+        "prefix": 0x1011,
     },
     "sha2-256-trunc254-padded": {
         "prefix": 0x1012,
+    },
+    "sha2-224": {
+        "prefix": 0x1013,
+    },
+    "sha2-512-224": {
+        "prefix": 0x1014,
+    },
+    "sha2-512-256": {
+        "prefix": 0x1015,
     },
     "ripemd-128": {
         "prefix": 0x1052,
@@ -1088,6 +1130,21 @@ CODECS = {
     "poseidon-bls12_381-a2-fc1-sc": {
         "prefix": 0xB402,
     },
+    "ssz-sha2-256-bmt": {
+        "prefix": 0xB502,
+    },
+    "sha2-256-chunked": {
+        "prefix": 0xB510,
+    },
+    "bittorrent-pieces-root": {
+        "prefix": 0xB702,
+    },
+    "bcrypt-pbkdf": {
+        "prefix": 0xD00D,
+    },
+    "ed2k": {
+        "prefix": 0xED20,
+    },
     # multiaddr
     "ip4": {
         "prefix": 0x04,
@@ -1103,6 +1160,9 @@ CODECS = {
     },
     "ip6zone": {
         "prefix": 0x2A,
+    },
+    "ipcidr": {
+        "prefix": 0x2B,
     },
     "dns": {
         "prefix": 0x35,
@@ -1130,6 +1190,12 @@ CODECS = {
     },
     "p2p-stardust": {
         "prefix": 0x0115,
+    },
+    "webrtc-direct": {
+        "prefix": 0x0118,
+    },
+    "webrtc": {
+        "prefix": 0x0119,
     },
     "p2p-circuit": {
         "prefix": 0x0122,
@@ -1167,8 +1233,26 @@ CODECS = {
     "tls": {
         "prefix": 0x01C0,
     },
+    "sni": {
+        "prefix": 0x01C1,
+    },
+    "noise": {
+        "prefix": 0x01C6,
+    },
+    "shs": {
+        "prefix": 0x01C8,
+    },
     "quic": {
         "prefix": 0x01CC,
+    },
+    "quic-v1": {
+        "prefix": 0x01CD,
+    },
+    "webtransport": {
+        "prefix": 0x01D1,
+    },
+    "certhash": {
+        "prefix": 0x01D2,
     },
     "ws": {
         "prefix": 0x01DD,
@@ -1182,15 +1266,21 @@ CODECS = {
     "http": {
         "prefix": 0x01E0,
     },
+    "http-path": {
+        "prefix": 0x01E1,
+    },
+    "silverpine": {
+        "prefix": 0x3F42,
+    },
+    "plaintextv2": {
+        "prefix": 0x706C61,
+    },
+    "scion": {
+        "prefix": 0xD02000,
+    },
     # ipld
-    "cidv1": {
-        "prefix": 0x01,
-    },
-    "cidv2": {
-        "prefix": 0x02,
-    },
-    "cidv3": {
-        "prefix": 0x03,
+    "cbor": {
+        "prefix": 0x51,
     },
     "raw": {
         "prefix": 0x55,
@@ -1212,6 +1302,9 @@ CODECS = {
     },
     "torrent-file": {
         "prefix": 0x7C,
+    },
+    "blake3-hashseq": {
+        "prefix": 0x80,
     },
     "leofcoin-block": {
         "prefix": 0x81,
@@ -1255,6 +1348,12 @@ CODECS = {
     "eth-storage-trie": {
         "prefix": 0x98,
     },
+    "eth-receipt-log-trie": {
+        "prefix": 0x99,
+    },
+    "eth-receipt-log": {
+        "prefix": 0x9A,
+    },
     "bitcoin-block": {
         "prefix": 0xB0,
     },
@@ -1294,35 +1393,80 @@ CODECS = {
     "swarm-feed": {
         "prefix": 0xFB,
     },
+    "beeson": {
+        "prefix": 0xFC,
+    },
     "dag-json": {
         "prefix": 0x0129,
+    },
+    "swhid-1-snp": {
+        "prefix": 0x01F0,
+    },
+    "json": {
+        "prefix": 0x0200,
+    },
+    "rdfc-1": {
+        "prefix": 0xB403,
+    },
+    "json-jcs": {
+        "prefix": 0xB601,
     },
     # namespace
     "path": {
         "prefix": 0x2F,
     },
-    "docid": {
+    "lbry": {
+        "prefix": 0x8C,
+    },
+    "streamid": {
         "prefix": 0xCE,
     },
-    "ipld-ns": {
+    "ipld": {
         "prefix": 0xE2,
     },
-    "ipfs-ns": {
+    "ipfs": {
         "prefix": 0xE3,
     },
-    "swarm-ns": {
+    "swarm": {
         "prefix": 0xE4,
     },
-    "ipns-ns": {
+    "ipns": {
         "prefix": 0xE5,
     },
     "zeronet": {
         "prefix": 0xE6,
     },
+    "dnslink": {
+        "prefix": 0xE8,
+    },
     "skynet-ns": {
         "prefix": 0xB19910,
     },
+    "arweave-ns": {
+        "prefix": 0xB29910,
+    },
+    "subspace-ns": {
+        "prefix": 0xB39910,
+    },
+    "kumandra-ns": {
+        "prefix": 0xB49910,
+    },
     # key
+    "aes-128": {
+        "prefix": 0xA0,
+    },
+    "aes-192": {
+        "prefix": 0xA1,
+    },
+    "aes-256": {
+        "prefix": 0xA2,
+    },
+    "chacha-128": {
+        "prefix": 0xA3,
+    },
+    "chacha-256": {
+        "prefix": 0xA4,
+    },
     "secp256k1-pub": {
         "prefix": 0xE7,
     },
@@ -1341,6 +1485,9 @@ CODECS = {
     "bls12_381-g1g2-pub": {
         "prefix": 0xEE,
     },
+    "sr25519-pub": {
+        "prefix": 0xEF,
+    },
     "p256-pub": {
         "prefix": 0x1200,
     },
@@ -1356,8 +1503,116 @@ CODECS = {
     "x448-pub": {
         "prefix": 0x1204,
     },
+    "rsa-pub": {
+        "prefix": 0x1205,
+    },
+    "sm2-pub": {
+        "prefix": 0x1206,
+    },
+    "mlkem-512-pub": {
+        "prefix": 0x120B,
+    },
+    "mlkem-768-pub": {
+        "prefix": 0x120C,
+    },
+    "mlkem-1024-pub": {
+        "prefix": 0x120D,
+    },
     "ed25519-priv": {
         "prefix": 0x1300,
+    },
+    "secp256k1-priv": {
+        "prefix": 0x1301,
+    },
+    "x25519-priv": {
+        "prefix": 0x1302,
+    },
+    "sr25519-priv": {
+        "prefix": 0x1303,
+    },
+    "rsa-priv": {
+        "prefix": 0x1305,
+    },
+    "p256-priv": {
+        "prefix": 0x1306,
+    },
+    "p384-priv": {
+        "prefix": 0x1307,
+    },
+    "p521-priv": {
+        "prefix": 0x1308,
+    },
+    "bls12_381-g1-priv": {
+        "prefix": 0x1309,
+    },
+    "bls12_381-g2-priv": {
+        "prefix": 0x130A,
+    },
+    "bls12_381-g1g2-priv": {
+        "prefix": 0x130B,
+    },
+    "bls12_381-g1-pub-share": {
+        "prefix": 0x130C,
+    },
+    "bls12_381-g2-pub-share": {
+        "prefix": 0x130D,
+    },
+    "bls12_381-g1-priv-share": {
+        "prefix": 0x130E,
+    },
+    "bls12_381-g2-priv-share": {
+        "prefix": 0x130F,
+    },
+    "sm2-priv": {
+        "prefix": 0x1310,
+    },
+    "ed448-priv": {
+        "prefix": 0x1311,
+    },
+    "x448-priv": {
+        "prefix": 0x1312,
+    },
+    "mlkem-512-priv": {
+        "prefix": 0x1313,
+    },
+    "mlkem-768-priv": {
+        "prefix": 0x1314,
+    },
+    "mlkem-1024-priv": {
+        "prefix": 0x1315,
+    },
+    "jwk_jcs-priv": {
+        "prefix": 0x1316,
+    },
+    "lamport-sha3-512-pub": {
+        "prefix": 0x1A14,
+    },
+    "lamport-sha3-384-pub": {
+        "prefix": 0x1A15,
+    },
+    "lamport-sha3-256-pub": {
+        "prefix": 0x1A16,
+    },
+    "lamport-sha3-512-priv": {
+        "prefix": 0x1A24,
+    },
+    "lamport-sha3-384-priv": {
+        "prefix": 0x1A25,
+    },
+    "lamport-sha3-256-priv": {
+        "prefix": 0x1A26,
+    },
+    "lamport-sha3-512-priv-share": {
+        "prefix": 0x1A34,
+    },
+    "lamport-sha3-384-priv-share": {
+        "prefix": 0x1A35,
+    },
+    "lamport-sha3-256-priv-share": {
+        "prefix": 0x1A36,
+    },
+    "jwk_jcs-pub": {
+        "prefix": 0xEB51,
     },
     # holochain
     "holochain-adr-v0": {
@@ -1378,13 +1633,182 @@ CODECS = {
     "holochain-sig-v1": {
         "prefix": 0xA37124,
     },
+    # cid
+    "cidv1": {
+        "prefix": 0x01,
+    },
+    "cidv2": {
+        "prefix": 0x02,
+    },
+    "cidv3": {
+        "prefix": 0x03,
+    },
+    # hash
+    "murmur3-x64-64": {
+        "prefix": 0x22,
+    },
+    "murmur3-32": {
+        "prefix": 0x23,
+    },
+    "crc32": {
+        "prefix": 0x0132,
+    },
+    "crc64-ecma": {
+        "prefix": 0x0164,
+    },
+    "crc64-nvme": {
+        "prefix": 0x0165,
+    },
+    "murmur3-x64-128": {
+        "prefix": 0x1022,
+    },
+    "sha256a": {
+        "prefix": 0x7012,
+    },
+    "xxh-32": {
+        "prefix": 0xB3E1,
+    },
+    "xxh-64": {
+        "prefix": 0xB3E2,
+    },
+    "xxh3-64": {
+        "prefix": 0xB3E3,
+    },
+    "xxh3-128": {
+        "prefix": 0xB3E4,
+    },
     # libp2p
     "libp2p-peer-record": {
         "prefix": 0x0301,
     },
+    "libp2p-relay-rsvp": {
+        "prefix": 0x0302,
+    },
+    "memorytransport": {
+        "prefix": 0x0309,
+    },
+    # transport
+    "transport-bitswap": {
+        "prefix": 0x0900,
+    },
+    "transport-graphsync-filecoinv1": {
+        "prefix": 0x0910,
+    },
+    "transport-ipfs-gateway-http": {
+        "prefix": 0x0920,
+    },
+    "transport-filecoin-piece-http": {
+        "prefix": 0x0930,
+    },
+    # vlad
+    "vlad": {
+        "prefix": 0x1207,
+    },
+    # nonce
+    "nonce": {
+        "prefix": 0x123B,
+    },
+    # multisig
+    "lamport-sha3-512-sig": {
+        "prefix": 0x1A44,
+    },
+    "lamport-sha3-384-sig": {
+        "prefix": 0x1A45,
+    },
+    "lamport-sha3-256-sig": {
+        "prefix": 0x1A46,
+    },
+    "lamport-sha3-512-sig-share": {
+        "prefix": 0x1A54,
+    },
+    "lamport-sha3-384-sig-share": {
+        "prefix": 0x1A55,
+    },
+    "lamport-sha3-256-sig-share": {
+        "prefix": 0x1A56,
+    },
+    "es256k-msig": {
+        "prefix": 0xD01300,
+    },
+    "bls12_381-g1-msig": {
+        "prefix": 0xD01301,
+    },
+    "bls12_381-g2-msig": {
+        "prefix": 0xD01302,
+    },
+    "eddsa-msig": {
+        "prefix": 0xD01303,
+    },
+    "bls12_381-g1-share-msig": {
+        "prefix": 0xD01304,
+    },
+    "bls12_381-g2-share-msig": {
+        "prefix": 0xD01305,
+    },
+    "lamport-msig": {
+        "prefix": 0xD01306,
+    },
+    "lamport-share-msig": {
+        "prefix": 0xD01307,
+    },
+    "es256-msig": {
+        "prefix": 0xD01308,
+    },
+    "es384-msig": {
+        "prefix": 0xD01309,
+    },
+    "es521-msig": {
+        "prefix": 0xD0130A,
+    },
+    "rs256-msig": {
+        "prefix": 0xD0130B,
+    },
+    # encryption
+    "aes-gcm-256": {
+        "prefix": 0x2000,
+    },
+    # multikey
+    "chacha20-poly1305": {
+        "prefix": 0xA000,
+    },
+    # softhash
+    "iscc": {
+        "prefix": 0xCC01,
+    },
     # zeroxcert
     "zeroxcert-imprint-256": {
         "prefix": 0xCE11,
+    },
+    # varsig
+    "nonstandard-sig": {
+        "prefix": 0xD000,
+    },
+    "es256k": {
+        "prefix": 0xD0E7,
+    },
+    "bls12_381-g1-sig": {
+        "prefix": 0xD0EA,
+    },
+    "bls12_381-g2-sig": {
+        "prefix": 0xD0EB,
+    },
+    "eddsa": {
+        "prefix": 0xD0ED,
+    },
+    "eip-191": {
+        "prefix": 0xD191,
+    },
+    "es256": {
+        "prefix": 0xD01200,
+    },
+    "es384": {
+        "prefix": 0xD01201,
+    },
+    "es512": {
+        "prefix": 0xD01202,
+    },
+    "rs256": {
+        "prefix": 0xD01205,
     },
     # filecoin
     "fil-commitment-unsealed": {
@@ -1392,6 +1816,22 @@ CODECS = {
     },
     "fil-commitment-sealed": {
         "prefix": 0xF102,
+    },
+    # shelter
+    "shelter-contract-manifest": {
+        "prefix": 0x511E00,
+    },
+    "shelter-contract-text": {
+        "prefix": 0x511E01,
+    },
+    "shelter-contract-data": {
+        "prefix": 0x511E02,
+    },
+    "shelter-file-manifest": {
+        "prefix": 0x511E03,
+    },
+    "shelter-file-chunk": {
+        "prefix": 0x511E04,
     },
 }
 
