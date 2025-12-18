@@ -2,7 +2,7 @@
 
 __author__ = """Dhruv Baldawa"""
 __email__ = "dhruv@dhruvb.com"
-__version__ = "0.2.1"
+__version__ = "1.0.0"
 
 # Core Code type
 from .code import (
