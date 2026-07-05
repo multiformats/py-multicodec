@@ -11,6 +11,7 @@ exclude = [
     "dist",
     "docs",
     "*.egg",
+    "multicodec-spec",
 ]
 
 [lint]
