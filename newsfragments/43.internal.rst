@@ -1,0 +1,1 @@
+Group generated ``code_table`` constants by upstream CSV ``tag`` instead of fragile name-pattern matching.

@@ -15,7 +15,7 @@ from __future__ import annotations
 
 from .code import Code
 
-# Multihash
+# multihash
 IDENTITY: Code = Code(0x00)  # identity
 SHA1: Code = Code(0x11)  # sha1
 SHA2_256: Code = Code(0x12)  # sha2-256
@@ -32,10 +32,7 @@ KECCAK_384: Code = Code(0x1C)  # keccak-384
 KECCAK_512: Code = Code(0x1D)  # keccak-512
 BLAKE3: Code = Code(0x1E)  # blake3
 SHA2_384: Code = Code(0x20)  # sha2-384
-MURMUR3_X64_64: Code = Code(0x22)  # murmur3-x64-64
-MURMUR3_32: Code = Code(0x23)  # murmur3-32
 DBL_SHA2_256: Code = Code(0x56)  # dbl-sha2-256
-BLAKE3_HASHSEQ: Code = Code(0x80)  # blake3-hashseq
 MD4: Code = Code(0xD4)  # md4
 MD5: Code = Code(0xD5)  # md5
 FR32_SHA256_TRUNC254_PADBINTREE: Code = Code(0x1011)  # fr32-sha256-trunc254-padbintree
@@ -43,34 +40,14 @@ SHA2_256_TRUNC254_PADDED: Code = Code(0x1012)  # sha2-256-trunc254-padded
 SHA2_224: Code = Code(0x1013)  # sha2-224
 SHA2_512_224: Code = Code(0x1014)  # sha2-512-224
 SHA2_512_256: Code = Code(0x1015)  # sha2-512-256
-MURMUR3_X64_128: Code = Code(0x1022)  # murmur3-x64-128
 RIPEMD_128: Code = Code(0x1052)  # ripemd-128
 RIPEMD_160: Code = Code(0x1053)  # ripemd-160
 RIPEMD_256: Code = Code(0x1054)  # ripemd-256
 RIPEMD_320: Code = Code(0x1055)  # ripemd-320
 X11: Code = Code(0x1100)  # x11
-BLS12_381_G1_PUB_SHARE: Code = Code(0x130C)  # bls12_381-g1-pub-share
-BLS12_381_G2_PUB_SHARE: Code = Code(0x130D)  # bls12_381-g2-pub-share
-BLS12_381_G1_PRIV_SHARE: Code = Code(0x130E)  # bls12_381-g1-priv-share
-BLS12_381_G2_PRIV_SHARE: Code = Code(0x130F)  # bls12_381-g2-priv-share
-LAMPORT_SHA3_512_PUB: Code = Code(0x1A14)  # lamport-sha3-512-pub
-LAMPORT_SHA3_384_PUB: Code = Code(0x1A15)  # lamport-sha3-384-pub
-LAMPORT_SHA3_256_PUB: Code = Code(0x1A16)  # lamport-sha3-256-pub
-LAMPORT_SHA3_512_PRIV: Code = Code(0x1A24)  # lamport-sha3-512-priv
-LAMPORT_SHA3_384_PRIV: Code = Code(0x1A25)  # lamport-sha3-384-priv
-LAMPORT_SHA3_256_PRIV: Code = Code(0x1A26)  # lamport-sha3-256-priv
-LAMPORT_SHA3_512_PRIV_SHARE: Code = Code(0x1A34)  # lamport-sha3-512-priv-share
-LAMPORT_SHA3_384_PRIV_SHARE: Code = Code(0x1A35)  # lamport-sha3-384-priv-share
-LAMPORT_SHA3_256_PRIV_SHARE: Code = Code(0x1A36)  # lamport-sha3-256-priv-share
-LAMPORT_SHA3_512_SIG: Code = Code(0x1A44)  # lamport-sha3-512-sig
-LAMPORT_SHA3_384_SIG: Code = Code(0x1A45)  # lamport-sha3-384-sig
-LAMPORT_SHA3_256_SIG: Code = Code(0x1A46)  # lamport-sha3-256-sig
-LAMPORT_SHA3_512_SIG_SHARE: Code = Code(0x1A54)  # lamport-sha3-512-sig-share
-LAMPORT_SHA3_384_SIG_SHARE: Code = Code(0x1A55)  # lamport-sha3-384-sig-share
-LAMPORT_SHA3_256_SIG_SHARE: Code = Code(0x1A56)  # lamport-sha3-256-sig-share
-KANGAROOTWELVE: Code = Code(0x1D01)  # kangarootwelve
+KT_128: Code = Code(0x1D01)  # kt-128
+KT_256: Code = Code(0x1D02)  # kt-256
 SM3_256: Code = Code(0x534D)  # sm3-256
-SHA256A: Code = Code(0x7012)  # sha256a
 BLAKE2B_8: Code = Code(0xB201)  # blake2b-8
 BLAKE2B_16: Code = Code(0xB202)  # blake2b-16
 BLAKE2B_24: Code = Code(0xB203)  # blake2b-24
@@ -395,23 +372,22 @@ POSEIDON_BLS12_381_A2_FC1: Code = Code(0xB401)  # poseidon-bls12_381-a2-fc1
 POSEIDON_BLS12_381_A2_FC1_SC: Code = Code(0xB402)  # poseidon-bls12_381-a2-fc1-sc
 SSZ_SHA2_256_BMT: Code = Code(0xB502)  # ssz-sha2-256-bmt
 SHA2_256_CHUNKED: Code = Code(0xB510)  # sha2-256-chunked
-BLS12_381_G1_SHARE_MSIG: Code = Code(0xD01304)  # bls12_381-g1-share-msig
-BLS12_381_G2_SHARE_MSIG: Code = Code(0xD01305)  # bls12_381-g2-share-msig
-LAMPORT_SHARE_MSIG: Code = Code(0xD01307)  # lamport-share-msig
+BITTORRENT_PIECES_ROOT: Code = Code(0xB702)  # bittorrent-pieces-root
+BCRYPT_PBKDF: Code = Code(0xD00D)  # bcrypt-pbkdf
+ED2K: Code = Code(0xED20)  # ed2k
 
-# Multiaddr
+# multiaddr
 IP4: Code = Code(0x04)  # ip4
 TCP: Code = Code(0x06)  # tcp
 DCCP: Code = Code(0x21)  # dccp
 IP6: Code = Code(0x29)  # ip6
 IP6ZONE: Code = Code(0x2A)  # ip6zone
+IPCIDR: Code = Code(0x2B)  # ipcidr
 DNS: Code = Code(0x35)  # dns
 DNS4: Code = Code(0x36)  # dns4
 DNS6: Code = Code(0x37)  # dns6
 DNSADDR: Code = Code(0x38)  # dnsaddr
-LIBP2P_KEY: Code = Code(0x72)  # libp2p-key
 SCTP: Code = Code(0x84)  # sctp
-DNSLINK: Code = Code(0xE8)  # dnslink
 UDP: Code = Code(0x111)  # udp
 P2P_WEBRTC_STAR: Code = Code(0x113)  # p2p-webrtc-star
 P2P_WEBRTC_DIRECT: Code = Code(0x114)  # p2p-webrtc-direct
@@ -435,31 +411,28 @@ NOISE: Code = Code(0x1C6)  # noise
 SHS: Code = Code(0x1C8)  # shs
 QUIC: Code = Code(0x1CC)  # quic
 QUIC_V1: Code = Code(0x1CD)  # quic-v1
+WEBTRANSPORT: Code = Code(0x1D1)  # webtransport
 CERTHASH: Code = Code(0x1D2)  # certhash
 WS: Code = Code(0x1DD)  # ws
 WSS: Code = Code(0x1DE)  # wss
 P2P_WEBSOCKET_STAR: Code = Code(0x1DF)  # p2p-websocket-star
 HTTP: Code = Code(0x1E0)  # http
 HTTP_PATH: Code = Code(0x1E1)  # http-path
-LIBP2P_PEER_RECORD: Code = Code(0x301)  # libp2p-peer-record
-LIBP2P_RELAY_RSVP: Code = Code(0x302)  # libp2p-relay-rsvp
-MEMORYTRANSPORT: Code = Code(0x309)  # memorytransport
-TRANSPORT_IPFS_GATEWAY_HTTP: Code = Code(0x920)  # transport-ipfs-gateway-http
-TRANSPORT_FILECOIN_PIECE_HTTP: Code = Code(0x930)  # transport-filecoin-piece-http
+ECH: Code = Code(0x2679)  # ech
+SILVERPINE: Code = Code(0x3F42)  # silverpine
 PLAINTEXTV2: Code = Code(0x706C61)  # plaintextv2
 SCION: Code = Code(0xD02000)  # scion
 
-# Ipld
-CIDV1: Code = Code(0x01)  # cidv1
-CIDV2: Code = Code(0x02)  # cidv2
-CIDV3: Code = Code(0x03)  # cidv3
-IPCIDR: Code = Code(0x2B)  # ipcidr
+# ipld
+CBOR: Code = Code(0x51)  # cbor
 RAW: Code = Code(0x55)  # raw
 DAG_PB: Code = Code(0x70)  # dag-pb
 DAG_CBOR: Code = Code(0x71)  # dag-cbor
+LIBP2P_KEY: Code = Code(0x72)  # libp2p-key
 GIT_RAW: Code = Code(0x78)  # git-raw
 TORRENT_INFO: Code = Code(0x7B)  # torrent-info
 TORRENT_FILE: Code = Code(0x7C)  # torrent-file
+BLAKE3_HASHSEQ: Code = Code(0x80)  # blake3-hashseq
 LEOFCOIN_BLOCK: Code = Code(0x81)  # leofcoin-block
 LEOFCOIN_TX: Code = Code(0x82)  # leofcoin-tx
 LEOFCOIN_PR: Code = Code(0x83)  # leofcoin-pr
@@ -492,31 +465,43 @@ SWARM_FEED: Code = Code(0xFB)  # swarm-feed
 BEESON: Code = Code(0xFC)  # beeson
 DAG_JSON: Code = Code(0x129)  # dag-json
 SWHID_1_SNP: Code = Code(0x1F0)  # swhid-1-snp
-BITTORRENT_PIECES_ROOT: Code = Code(0xB702)  # bittorrent-pieces-root
+JSON: Code = Code(0x200)  # json
+GRID_CBOR: Code = Code(0x1027)  # grid-cbor
+RDFC_1: Code = Code(0xB403)  # rdfc-1
+JSON_JCS: Code = Code(0xB601)  # json-jcs
 
-# Serialization
+# serialization
 PROTOBUF: Code = Code(0x50)  # protobuf
-CBOR: Code = Code(0x51)  # cbor
 RLP: Code = Code(0x60)  # rlp
 BENCODE: Code = Code(0x63)  # bencode
-JSON: Code = Code(0x200)  # json
 MESSAGEPACK: Code = Code(0x201)  # messagepack
 CAR: Code = Code(0x202)  # car
 X509_CERTIFICATE: Code = Code(0x210)  # x509-certificate
 IPNS_RECORD: Code = Code(0x300)  # ipns-record
 CAR_INDEX_SORTED: Code = Code(0x400)  # car-index-sorted
 CAR_MULTIHASH_INDEX_SORTED: Code = Code(0x401)  # car-multihash-index-sorted
+PROVENANCE_LOG: Code = Code(0x1208)  # provenance-log
+PROVENANCE_LOG_ENTRY: Code = Code(0x1209)  # provenance-log-entry
+PROVENANCE_LOG_SCRIPT: Code = Code(0x120A)  # provenance-log-script
 SSZ: Code = Code(0xB501)  # ssz
-JSON_JCS: Code = Code(0xB601)  # json-jcs
 
-# Multiformat
+# multiformat
 MULTICODEC: Code = Code(0x30)  # multicodec
 MULTIHASH: Code = Code(0x31)  # multihash
 MULTIADDR: Code = Code(0x32)  # multiaddr
 MULTIBASE: Code = Code(0x33)  # multibase
 VARSIG: Code = Code(0x34)  # varsig
+CAIP_50: Code = Code(0xCA)  # caip-50
+MULTIDID: Code = Code(0xD1D)  # multidid
+MULTISIG: Code = Code(0x1239)  # multisig
+MULTIKEY: Code = Code(0x123A)  # multikey
 
-# Key
+# key
+AES_128: Code = Code(0xA0)  # aes-128
+AES_192: Code = Code(0xA1)  # aes-192
+AES_256: Code = Code(0xA2)  # aes-256
+CHACHA_128: Code = Code(0xA3)  # chacha-128
+CHACHA_256: Code = Code(0xA4)  # chacha-256
 SECP256K1_PUB: Code = Code(0xE7)  # secp256k1-pub
 BLS12_381_G1_PUB: Code = Code(0xEA)  # bls12_381-g1-pub
 BLS12_381_G2_PUB: Code = Code(0xEB)  # bls12_381-g2-pub
@@ -534,6 +519,21 @@ SM2_PUB: Code = Code(0x1206)  # sm2-pub
 MLKEM_512_PUB: Code = Code(0x120B)  # mlkem-512-pub
 MLKEM_768_PUB: Code = Code(0x120C)  # mlkem-768-pub
 MLKEM_1024_PUB: Code = Code(0x120D)  # mlkem-1024-pub
+MLDSA_44_PUB: Code = Code(0x1210)  # mldsa-44-pub
+MLDSA_65_PUB: Code = Code(0x1211)  # mldsa-65-pub
+MLDSA_87_PUB: Code = Code(0x1212)  # mldsa-87-pub
+SLHDSA_SHA2_128S_PUB: Code = Code(0x1220)  # slhdsa-sha2-128s-pub
+SLHDSA_SHAKE_128S_PUB: Code = Code(0x1221)  # slhdsa-shake-128s-pub
+SLHDSA_SHA2_128F_PUB: Code = Code(0x1222)  # slhdsa-sha2-128f-pub
+SLHDSA_SHAKE_128F_PUB: Code = Code(0x1223)  # slhdsa-shake-128f-pub
+SLHDSA_SHA2_192S_PUB: Code = Code(0x1224)  # slhdsa-sha2-192s-pub
+SLHDSA_SHAKE_192S_PUB: Code = Code(0x1225)  # slhdsa-shake-192s-pub
+SLHDSA_SHA2_192F_PUB: Code = Code(0x1226)  # slhdsa-sha2-192f-pub
+SLHDSA_SHAKE_192F_PUB: Code = Code(0x1227)  # slhdsa-shake-192f-pub
+SLHDSA_SHA2_256S_PUB: Code = Code(0x1228)  # slhdsa-sha2-256s-pub
+SLHDSA_SHAKE_256S_PUB: Code = Code(0x1229)  # slhdsa-shake-256s-pub
+SLHDSA_SHA2_256F_PUB: Code = Code(0x122A)  # slhdsa-sha2-256f-pub
+SLHDSA_SHAKE_256F_PUB: Code = Code(0x122B)  # slhdsa-shake-256f-pub
 ED25519_PRIV: Code = Code(0x1300)  # ed25519-priv
 SECP256K1_PRIV: Code = Code(0x1301)  # secp256k1-priv
 X25519_PRIV: Code = Code(0x1302)  # x25519-priv
@@ -545,6 +545,10 @@ P521_PRIV: Code = Code(0x1308)  # p521-priv
 BLS12_381_G1_PRIV: Code = Code(0x1309)  # bls12_381-g1-priv
 BLS12_381_G2_PRIV: Code = Code(0x130A)  # bls12_381-g2-priv
 BLS12_381_G1G2_PRIV: Code = Code(0x130B)  # bls12_381-g1g2-priv
+BLS12_381_G1_PUB_SHARE: Code = Code(0x130C)  # bls12_381-g1-pub-share
+BLS12_381_G2_PUB_SHARE: Code = Code(0x130D)  # bls12_381-g2-pub-share
+BLS12_381_G1_PRIV_SHARE: Code = Code(0x130E)  # bls12_381-g1-priv-share
+BLS12_381_G2_PRIV_SHARE: Code = Code(0x130F)  # bls12_381-g2-priv-share
 SM2_PRIV: Code = Code(0x1310)  # sm2-priv
 ED448_PRIV: Code = Code(0x1311)  # ed448-priv
 X448_PRIV: Code = Code(0x1312)  # x448-priv
@@ -552,89 +556,162 @@ MLKEM_512_PRIV: Code = Code(0x1313)  # mlkem-512-priv
 MLKEM_768_PRIV: Code = Code(0x1314)  # mlkem-768-priv
 MLKEM_1024_PRIV: Code = Code(0x1315)  # mlkem-1024-priv
 JWK_JCS_PRIV: Code = Code(0x1316)  # jwk_jcs-priv
-BLS12_381_G1_SIG: Code = Code(0xD0EA)  # bls12_381-g1-sig
-BLS12_381_G2_SIG: Code = Code(0xD0EB)  # bls12_381-g2-sig
+MLDSA_44_PRIV: Code = Code(0x1317)  # mldsa-44-priv
+MLDSA_65_PRIV: Code = Code(0x1318)  # mldsa-65-priv
+MLDSA_87_PRIV: Code = Code(0x1319)  # mldsa-87-priv
+MLDSA_44_PRIV_SEED: Code = Code(0x131A)  # mldsa-44-priv-seed
+MLDSA_65_PRIV_SEED: Code = Code(0x131B)  # mldsa-65-priv-seed
+MLDSA_87_PRIV_SEED: Code = Code(0x131C)  # mldsa-87-priv-seed
+SLHDSA_SHA2_128S_PRIV: Code = Code(0x131D)  # slhdsa-sha2-128s-priv
+SLHDSA_SHAKE_128S_PRIV: Code = Code(0x131E)  # slhdsa-shake-128s-priv
+SLHDSA_SHA2_128F_PRIV: Code = Code(0x131F)  # slhdsa-sha2-128f-priv
+SLHDSA_SHAKE_128F_PRIV: Code = Code(0x1320)  # slhdsa-shake-128f-priv
+SLHDSA_SHA2_192S_PRIV: Code = Code(0x1321)  # slhdsa-sha2-192s-priv
+SLHDSA_SHAKE_192S_PRIV: Code = Code(0x1322)  # slhdsa-shake-192s-priv
+SLHDSA_SHA2_192F_PRIV: Code = Code(0x1323)  # slhdsa-sha2-192f-priv
+SLHDSA_SHAKE_192F_PRIV: Code = Code(0x1324)  # slhdsa-shake-192f-priv
+SLHDSA_SHA2_256S_PRIV: Code = Code(0x1325)  # slhdsa-sha2-256s-priv
+SLHDSA_SHAKE_256S_PRIV: Code = Code(0x1326)  # slhdsa-shake-256s-priv
+SLHDSA_SHA2_256F_PRIV: Code = Code(0x1327)  # slhdsa-sha2-256f-priv
+SLHDSA_SHAKE_256F_PRIV: Code = Code(0x1328)  # slhdsa-shake-256f-priv
+BIP340_PUB: Code = Code(0x1340)  # bip340-pub
+BIP340_PRIV: Code = Code(0x1341)  # bip340-priv
+LAMPORT_SHA3_512_PUB: Code = Code(0x1A14)  # lamport-sha3-512-pub
+LAMPORT_SHA3_384_PUB: Code = Code(0x1A15)  # lamport-sha3-384-pub
+LAMPORT_SHA3_256_PUB: Code = Code(0x1A16)  # lamport-sha3-256-pub
+LAMPORT_SHA3_512_PRIV: Code = Code(0x1A24)  # lamport-sha3-512-priv
+LAMPORT_SHA3_384_PRIV: Code = Code(0x1A25)  # lamport-sha3-384-priv
+LAMPORT_SHA3_256_PRIV: Code = Code(0x1A26)  # lamport-sha3-256-priv
+LAMPORT_SHA3_512_PRIV_SHARE: Code = Code(0x1A34)  # lamport-sha3-512-priv-share
+LAMPORT_SHA3_384_PRIV_SHARE: Code = Code(0x1A35)  # lamport-sha3-384-priv-share
+LAMPORT_SHA3_256_PRIV_SHARE: Code = Code(0x1A36)  # lamport-sha3-256-priv-share
 JWK_JCS_PUB: Code = Code(0xEB51)  # jwk_jcs-pub
-BLS12_381_G1_MSIG: Code = Code(0xD01301)  # bls12_381-g1-msig
-BLS12_381_G2_MSIG: Code = Code(0xD01302)  # bls12_381-g2-msig
 
-# Namespace
+# namespace
 PATH: Code = Code(0x2F)  # path
 LBRY: Code = Code(0x8C)  # lbry
 STREAMID: Code = Code(0xCE)  # streamid
+IPLD: Code = Code(0xE2)  # ipld
+IPFS: Code = Code(0xE3)  # ipfs
+SWARM: Code = Code(0xE4)  # swarm
 IPNS: Code = Code(0xE5)  # ipns
 ZERONET: Code = Code(0xE6)  # zeronet
-WEBTRANSPORT: Code = Code(0x1D1)  # webtransport
-TRANSPORT_BITSWAP: Code = Code(0x900)  # transport-bitswap
-TRANSPORT_GRAPHSYNC_FILECOINV1: Code = Code(0x910)  # transport-graphsync-filecoinv1
-NONSTANDARD_SIG: Code = Code(0xD000)  # nonstandard-sig
-FIL_COMMITMENT_UNSEALED: Code = Code(0xF101)  # fil-commitment-unsealed
+DNSLINK: Code = Code(0xE8)  # dnslink
 SKYNET_NS: Code = Code(0xB19910)  # skynet-ns
 ARWEAVE_NS: Code = Code(0xB29910)  # arweave-ns
 SUBSPACE_NS: Code = Code(0xB39910)  # subspace-ns
 KUMANDRA_NS: Code = Code(0xB49910)  # kumandra-ns
+MASSA: Code = Code(0xB59910)  # massa
+MASSA_MAINNET: Code = Code(0xB59911)  # massa-mainnet
+MASSA_BUILDNET: Code = Code(0xB59912)  # massa-buildnet
+MASSA_DEWEB: Code = Code(0xB59913)  # massa-deweb
+MASSA_GOSSIP: Code = Code(0xB59914)  # massa-gossip
+MASSA_MNS: Code = Code(0xB59915)  # massa-mns
+MASSA_SC: Code = Code(0xB59916)  # massa-sc
+MASSA_GOSSIP_ID: Code = Code(0xB59917)  # massa-gossip-id
+ADNL: Code = Code(0xB69910)  # adnl
 
-# Other
-AES_128: Code = Code(0xA0)  # aes-128
-AES_192: Code = Code(0xA1)  # aes-192
-AES_256: Code = Code(0xA2)  # aes-256
-CHACHA_128: Code = Code(0xA3)  # chacha-128
-CHACHA_256: Code = Code(0xA4)  # chacha-256
-CAIP_50: Code = Code(0xCA)  # caip-50
-IPLD: Code = Code(0xE2)  # ipld
-IPFS: Code = Code(0xE3)  # ipfs
-SWARM: Code = Code(0xE4)  # swarm
+# cid
+CIDV1: Code = Code(0x01)  # cidv1
+CIDV2: Code = Code(0x02)  # cidv2
+CIDV3: Code = Code(0x03)  # cidv3
+
+# encryption
+AES_GCM_256: Code = Code(0x2000)  # aes-gcm-256
+
+# filecoin
+FIL_COMMITMENT_UNSEALED: Code = Code(0xF101)  # fil-commitment-unsealed
+FIL_COMMITMENT_SEALED: Code = Code(0xF102)  # fil-commitment-sealed
+
+# hash
+MURMUR3_X64_64: Code = Code(0x22)  # murmur3-x64-64
+MURMUR3_32: Code = Code(0x23)  # murmur3-32
 CRC32: Code = Code(0x132)  # crc32
 CRC64_ECMA: Code = Code(0x164)  # crc64-ecma
 CRC64_NVME: Code = Code(0x165)  # crc64-nvme
-MULTIDID: Code = Code(0xD1D)  # multidid
-VLAD: Code = Code(0x1207)  # vlad
-PROVENANCE_LOG: Code = Code(0x1208)  # provenance-log
-PROVENANCE_LOG_ENTRY: Code = Code(0x1209)  # provenance-log-entry
-PROVENANCE_LOG_SCRIPT: Code = Code(0x120A)  # provenance-log-script
-MULTISIG: Code = Code(0x1239)  # multisig
-MULTIKEY: Code = Code(0x123A)  # multikey
-NONCE: Code = Code(0x123B)  # nonce
-AES_GCM_256: Code = Code(0x2000)  # aes-gcm-256
-SILVERPINE: Code = Code(0x3F42)  # silverpine
-CHACHA20_POLY1305: Code = Code(0xA000)  # chacha20-poly1305
+MURMUR3_X64_128: Code = Code(0x1022)  # murmur3-x64-128
+SHA256A: Code = Code(0x7012)  # sha256a
 XXH_32: Code = Code(0xB3E1)  # xxh-32
 XXH_64: Code = Code(0xB3E2)  # xxh-64
 XXH3_64: Code = Code(0xB3E3)  # xxh3-64
 XXH3_128: Code = Code(0xB3E4)  # xxh3-128
-RDFC_1: Code = Code(0xB403)  # rdfc-1
-ISCC: Code = Code(0xCC01)  # iscc
-ZEROXCERT_IMPRINT_256: Code = Code(0xCE11)  # zeroxcert-imprint-256
-BCRYPT_PBKDF: Code = Code(0xD00D)  # bcrypt-pbkdf
-ES256K: Code = Code(0xD0E7)  # es256k
-EDDSA: Code = Code(0xD0ED)  # eddsa
-EIP_191: Code = Code(0xD191)  # eip-191
-ED2K: Code = Code(0xED20)  # ed2k
-FIL_COMMITMENT_SEALED: Code = Code(0xF102)  # fil-commitment-sealed
-SHELTER_CONTRACT_MANIFEST: Code = Code(0x511E00)  # shelter-contract-manifest
-SHELTER_CONTRACT_TEXT: Code = Code(0x511E01)  # shelter-contract-text
-SHELTER_CONTRACT_DATA: Code = Code(0x511E02)  # shelter-contract-data
-SHELTER_FILE_MANIFEST: Code = Code(0x511E03)  # shelter-file-manifest
-SHELTER_FILE_CHUNK: Code = Code(0x511E04)  # shelter-file-chunk
+
+# holochain
 HOLOCHAIN_ADR_V0: Code = Code(0x807124)  # holochain-adr-v0
 HOLOCHAIN_ADR_V1: Code = Code(0x817124)  # holochain-adr-v1
 HOLOCHAIN_KEY_V0: Code = Code(0x947124)  # holochain-key-v0
 HOLOCHAIN_KEY_V1: Code = Code(0x957124)  # holochain-key-v1
 HOLOCHAIN_SIG_V0: Code = Code(0xA27124)  # holochain-sig-v0
 HOLOCHAIN_SIG_V1: Code = Code(0xA37124)  # holochain-sig-v1
-ES256: Code = Code(0xD01200)  # es256
-ES384: Code = Code(0xD01201)  # es384
-ES512: Code = Code(0xD01202)  # es512
-RS256: Code = Code(0xD01205)  # rs256
+
+# libp2p
+LIBP2P_PEER_RECORD: Code = Code(0x301)  # libp2p-peer-record
+LIBP2P_RELAY_RSVP: Code = Code(0x302)  # libp2p-relay-rsvp
+MEMORYTRANSPORT: Code = Code(0x309)  # memorytransport
+
+# multikey
+CHACHA20_POLY1305: Code = Code(0xA000)  # chacha20-poly1305
+
+# multisig
+LAMPORT_SHA3_512_SIG: Code = Code(0x1A44)  # lamport-sha3-512-sig
+LAMPORT_SHA3_384_SIG: Code = Code(0x1A45)  # lamport-sha3-384-sig
+LAMPORT_SHA3_256_SIG: Code = Code(0x1A46)  # lamport-sha3-256-sig
+LAMPORT_SHA3_512_SIG_SHARE: Code = Code(0x1A54)  # lamport-sha3-512-sig-share
+LAMPORT_SHA3_384_SIG_SHARE: Code = Code(0x1A55)  # lamport-sha3-384-sig-share
+LAMPORT_SHA3_256_SIG_SHARE: Code = Code(0x1A56)  # lamport-sha3-256-sig-share
 ES256K_MSIG: Code = Code(0xD01300)  # es256k-msig
+BLS12_381_G1_MSIG: Code = Code(0xD01301)  # bls12_381-g1-msig
+BLS12_381_G2_MSIG: Code = Code(0xD01302)  # bls12_381-g2-msig
 EDDSA_MSIG: Code = Code(0xD01303)  # eddsa-msig
+BLS12_381_G1_SHARE_MSIG: Code = Code(0xD01304)  # bls12_381-g1-share-msig
+BLS12_381_G2_SHARE_MSIG: Code = Code(0xD01305)  # bls12_381-g2-share-msig
 LAMPORT_MSIG: Code = Code(0xD01306)  # lamport-msig
+LAMPORT_SHARE_MSIG: Code = Code(0xD01307)  # lamport-share-msig
 ES256_MSIG: Code = Code(0xD01308)  # es256-msig
 ES384_MSIG: Code = Code(0xD01309)  # es384-msig
 ES521_MSIG: Code = Code(0xD0130A)  # es521-msig
 RS256_MSIG: Code = Code(0xD0130B)  # rs256-msig
 
+# nonce
+NONCE: Code = Code(0x123B)  # nonce
+
+# shelter
+SHELTER_CONTRACT_MANIFEST: Code = Code(0x511E00)  # shelter-contract-manifest
+SHELTER_CONTRACT_TEXT: Code = Code(0x511E01)  # shelter-contract-text
+SHELTER_CONTRACT_DATA: Code = Code(0x511E02)  # shelter-contract-data
+SHELTER_FILE_MANIFEST: Code = Code(0x511E03)  # shelter-file-manifest
+SHELTER_FILE_CHUNK: Code = Code(0x511E04)  # shelter-file-chunk
+
+# softhash
+ISCC: Code = Code(0xCC01)  # iscc
+
+# transport
+TRANSPORT_BITSWAP: Code = Code(0x900)  # transport-bitswap
+TRANSPORT_GRAPHSYNC_FILECOINV1: Code = Code(0x910)  # transport-graphsync-filecoinv1
+TRANSPORT_IPFS_GATEWAY_HTTP: Code = Code(0x920)  # transport-ipfs-gateway-http
+TRANSPORT_FILECOIN_PIECE_HTTP: Code = Code(0x930)  # transport-filecoin-piece-http
+
+# varsig
+NONSTANDARD_SIG: Code = Code(0xD000)  # nonstandard-sig
+ES256K: Code = Code(0xD0E7)  # es256k
+BLS12_381_G1_SIG: Code = Code(0xD0EA)  # bls12_381-g1-sig
+BLS12_381_G2_SIG: Code = Code(0xD0EB)  # bls12_381-g2-sig
+EDDSA: Code = Code(0xD0ED)  # eddsa
+EIP_191: Code = Code(0xD191)  # eip-191
+ES256: Code = Code(0xD01200)  # es256
+ES384: Code = Code(0xD01201)  # es384
+ES512: Code = Code(0xD01202)  # es512
+RS256: Code = Code(0xD01205)  # rs256
+BIP340: Code = Code(0xD01206)  # bip340
+
+# vlad
+VLAD: Code = Code(0x1207)  # vlad
+
+# zeroxcert
+ZEROXCERT_IMPRINT_256: Code = Code(0xCE11)  # zeroxcert-imprint-256
+
 __all__ = [
+    "ADNL",
     "AES_128",
     "AES_192",
     "AES_256",
@@ -643,6 +720,9 @@ __all__ = [
     "BCRYPT_PBKDF",
     "BEESON",
     "BENCODE",
+    "BIP340",
+    "BIP340_PRIV",
+    "BIP340_PUB",
     "BITCOIN_BLOCK",
     "BITCOIN_TX",
     "BITCOIN_WITNESS_COMMITMENT",
@@ -792,6 +872,7 @@ __all__ = [
     "DNS6",
     "DNSADDR",
     "DNSLINK",
+    "ECH",
     "ED2K",
     "ED448_PRIV",
     "ED448_PUB",
@@ -825,6 +906,7 @@ __all__ = [
     "GARLIC32",
     "GARLIC64",
     "GIT_RAW",
+    "GRID_CBOR",
     "HOLOCHAIN_ADR_V0",
     "HOLOCHAIN_ADR_V1",
     "HOLOCHAIN_KEY_V0",
@@ -848,11 +930,12 @@ __all__ = [
     "JSON_JCS",
     "JWK_JCS_PRIV",
     "JWK_JCS_PUB",
-    "KANGAROOTWELVE",
     "KECCAK_224",
     "KECCAK_256",
     "KECCAK_384",
     "KECCAK_512",
+    "KT_128",
+    "KT_256",
     "KUMANDRA_NS",
     "LAMPORT_MSIG",
     "LAMPORT_SHA3_256_PRIV",
@@ -878,10 +961,27 @@ __all__ = [
     "LIBP2P_KEY",
     "LIBP2P_PEER_RECORD",
     "LIBP2P_RELAY_RSVP",
+    "MASSA",
+    "MASSA_BUILDNET",
+    "MASSA_DEWEB",
+    "MASSA_GOSSIP",
+    "MASSA_GOSSIP_ID",
+    "MASSA_MAINNET",
+    "MASSA_MNS",
+    "MASSA_SC",
     "MD4",
     "MD5",
     "MEMORYTRANSPORT",
     "MESSAGEPACK",
+    "MLDSA_44_PRIV",
+    "MLDSA_44_PRIV_SEED",
+    "MLDSA_44_PUB",
+    "MLDSA_65_PRIV",
+    "MLDSA_65_PRIV_SEED",
+    "MLDSA_65_PUB",
+    "MLDSA_87_PRIV",
+    "MLDSA_87_PRIV_SEED",
+    "MLDSA_87_PUB",
     "MLKEM_512_PRIV",
     "MLKEM_512_PUB",
     "MLKEM_768_PRIV",
@@ -1188,6 +1288,30 @@ __all__ = [
     "SKEIN1024_1016",
     "SKEIN1024_1024",
     "SKYNET_NS",
+    "SLHDSA_SHA2_128F_PRIV",
+    "SLHDSA_SHA2_128F_PUB",
+    "SLHDSA_SHA2_128S_PRIV",
+    "SLHDSA_SHA2_128S_PUB",
+    "SLHDSA_SHA2_192F_PRIV",
+    "SLHDSA_SHA2_192F_PUB",
+    "SLHDSA_SHA2_192S_PRIV",
+    "SLHDSA_SHA2_192S_PUB",
+    "SLHDSA_SHA2_256F_PRIV",
+    "SLHDSA_SHA2_256F_PUB",
+    "SLHDSA_SHA2_256S_PRIV",
+    "SLHDSA_SHA2_256S_PUB",
+    "SLHDSA_SHAKE_128F_PRIV",
+    "SLHDSA_SHAKE_128F_PUB",
+    "SLHDSA_SHAKE_128S_PRIV",
+    "SLHDSA_SHAKE_128S_PUB",
+    "SLHDSA_SHAKE_192F_PRIV",
+    "SLHDSA_SHAKE_192F_PUB",
+    "SLHDSA_SHAKE_192S_PRIV",
+    "SLHDSA_SHAKE_192S_PUB",
+    "SLHDSA_SHAKE_256F_PRIV",
+    "SLHDSA_SHAKE_256F_PUB",
+    "SLHDSA_SHAKE_256S_PRIV",
+    "SLHDSA_SHAKE_256S_PUB",
     "SM2_PRIV",
     "SM2_PUB",
     "SM3_256",
