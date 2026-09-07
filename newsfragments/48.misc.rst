@@ -1,0 +1,1 @@
+Add Hypothesis-based fuzz tests so prefix and Code parsing helpers never crash on random input.
