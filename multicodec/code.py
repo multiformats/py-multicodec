@@ -342,6 +342,14 @@ def _get_tag(code: int) -> str:
     if name in ("multicodec", "multihash", "multiaddr", "multibase", "varsig"):
         return "multiformat"
 
+    # Multikey
+    if name == "chacha20-poly1305":
+        return "multikey"
+
+    # Multisig
+    if "-msig" in name or ("lamport-" in name and "-sig" in name):
+        return "multisig"
+
     # Multihash
     if any(
         h in name
@@ -387,6 +395,10 @@ def _get_tag(code: int) -> str:
     ):
         return "namespace"
 
+    # Nonce
+    if name == "nonce":
+        return "nonce"
+
     # Serialization
     if name in (
         "protobuf",
@@ -401,6 +413,14 @@ def _get_tag(code: int) -> str:
         "ssz",
     ):
         return "serialization"
+
+    # Shelter
+    if name.startswith("shelter-"):
+        return "shelter"
+
+    # Softhash
+    if name == "iscc":
+        return "softhash"
 
     # Transport
     if name in (
@@ -424,6 +444,10 @@ def _get_tag(code: int) -> str:
         "rs256",
     ):
         return "varsig"
+
+    # Vlad
+    if name == "vlad":
+        return "vlad"
 
     # Zeroxcert
     if name in ("zeroxcert-imprint-256",):
