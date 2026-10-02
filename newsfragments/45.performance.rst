@@ -1,0 +1,1 @@
+Add optional pytest-benchmark suite for core Code and prefix operations.
