@@ -170,3 +170,10 @@ warn_redundant_casts = false
 warn_return_any = false
 warn_unused_configs = true
 warn_unused_ignores = false
+
+[tool.ruff]
+extend-exclude = ["multicodec-spec"]
+force-exclude = true
+
+[tool.ruff.lint]
+ignore = ["RUF003"]

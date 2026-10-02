@@ -158,8 +158,11 @@ CODECS = {
     "x11": {
         "prefix": 0x1100,
     },
-    "kangarootwelve": {
+    "kt-128": {
         "prefix": 0x1D01,
+    },
+    "kt-256": {
+        "prefix": 0x1D02,
     },
     "sm3-256": {
         "prefix": 0x534D,
@@ -1451,6 +1454,33 @@ CODECS = {
     "kumandra-ns": {
         "prefix": 0xB49910,
     },
+    "massa": {
+        "prefix": 0xB59910,
+    },
+    "massa-mainnet": {
+        "prefix": 0xB59911,
+    },
+    "massa-buildnet": {
+        "prefix": 0xB59912,
+    },
+    "massa-deweb": {
+        "prefix": 0xB59913,
+    },
+    "massa-gossip": {
+        "prefix": 0xB59914,
+    },
+    "massa-mns": {
+        "prefix": 0xB59915,
+    },
+    "massa-sc": {
+        "prefix": 0xB59916,
+    },
+    "massa-gossip-id": {
+        "prefix": 0xB59917,
+    },
+    "adnl": {
+        "prefix": 0xB69910,
+    },
     # key
     "aes-128": {
         "prefix": 0xA0,
@@ -1518,6 +1548,51 @@ CODECS = {
     "mlkem-1024-pub": {
         "prefix": 0x120D,
     },
+    "mldsa-44-pub": {
+        "prefix": 0x1210,
+    },
+    "mldsa-65-pub": {
+        "prefix": 0x1211,
+    },
+    "mldsa-87-pub": {
+        "prefix": 0x1212,
+    },
+    "slhdsa-sha2-128s-pub": {
+        "prefix": 0x1220,
+    },
+    "slhdsa-shake-128s-pub": {
+        "prefix": 0x1221,
+    },
+    "slhdsa-sha2-128f-pub": {
+        "prefix": 0x1222,
+    },
+    "slhdsa-shake-128f-pub": {
+        "prefix": 0x1223,
+    },
+    "slhdsa-sha2-192s-pub": {
+        "prefix": 0x1224,
+    },
+    "slhdsa-shake-192s-pub": {
+        "prefix": 0x1225,
+    },
+    "slhdsa-sha2-192f-pub": {
+        "prefix": 0x1226,
+    },
+    "slhdsa-shake-192f-pub": {
+        "prefix": 0x1227,
+    },
+    "slhdsa-sha2-256s-pub": {
+        "prefix": 0x1228,
+    },
+    "slhdsa-shake-256s-pub": {
+        "prefix": 0x1229,
+    },
+    "slhdsa-sha2-256f-pub": {
+        "prefix": 0x122A,
+    },
+    "slhdsa-shake-256f-pub": {
+        "prefix": 0x122B,
+    },
     "ed25519-priv": {
         "prefix": 0x1300,
     },
@@ -1583,6 +1658,66 @@ CODECS = {
     },
     "jwk_jcs-priv": {
         "prefix": 0x1316,
+    },
+    "mldsa-44-priv": {
+        "prefix": 0x1317,
+    },
+    "mldsa-65-priv": {
+        "prefix": 0x1318,
+    },
+    "mldsa-87-priv": {
+        "prefix": 0x1319,
+    },
+    "mldsa-44-priv-seed": {
+        "prefix": 0x131A,
+    },
+    "mldsa-65-priv-seed": {
+        "prefix": 0x131B,
+    },
+    "mldsa-87-priv-seed": {
+        "prefix": 0x131C,
+    },
+    "slhdsa-sha2-128s-priv": {
+        "prefix": 0x131D,
+    },
+    "slhdsa-shake-128s-priv": {
+        "prefix": 0x131E,
+    },
+    "slhdsa-sha2-128f-priv": {
+        "prefix": 0x131F,
+    },
+    "slhdsa-shake-128f-priv": {
+        "prefix": 0x1320,
+    },
+    "slhdsa-sha2-192s-priv": {
+        "prefix": 0x1321,
+    },
+    "slhdsa-shake-192s-priv": {
+        "prefix": 0x1322,
+    },
+    "slhdsa-sha2-192f-priv": {
+        "prefix": 0x1323,
+    },
+    "slhdsa-shake-192f-priv": {
+        "prefix": 0x1324,
+    },
+    "slhdsa-sha2-256s-priv": {
+        "prefix": 0x1325,
+    },
+    "slhdsa-shake-256s-priv": {
+        "prefix": 0x1326,
+    },
+    "slhdsa-sha2-256f-priv": {
+        "prefix": 0x1327,
+    },
+    "slhdsa-shake-256f-priv": {
+        "prefix": 0x1328,
+    },
+    "bip340-pub": {
+        "prefix": 0x1340,
+    },
+    "bip340-priv": {
+        "prefix": 0x1341,
     },
     "lamport-sha3-512-pub": {
         "prefix": 0x1A14,
@@ -1809,6 +1944,9 @@ CODECS = {
     },
     "rs256": {
         "prefix": 0xD01205,
+    },
+    "bip340": {
+        "prefix": 0xD01206,
     },
     # filecoin
     "fil-commitment-unsealed": {
