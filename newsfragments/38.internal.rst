@@ -1,0 +1,1 @@
+Preserve ``tag``, ``status``, and ``description`` from the upstream multicodec table when generating ``constants.py``.
