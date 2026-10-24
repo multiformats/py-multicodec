@@ -1,0 +1,1 @@
+Add ``version.json`` at the repository root to match ``go-multicodec``, and keep it in sync on release through ``bump-my-version``.
