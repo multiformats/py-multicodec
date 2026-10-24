@@ -1,0 +1,1 @@
+Fix ``Code.tag()`` reporting an ``<unknown>`` tag for codecs whose names missed the pattern mappings (such as ``provenance-log``, ``aes-128`` and ``memorytransport``), and add tests covering every tag category.
