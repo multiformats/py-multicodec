@@ -1,0 +1,1 @@
+Add a spec compliance test validating ``CODECS``, ``CODE_TABLE`` and ``NAME_TABLE`` against the authoritative ``table.csv``, which is vendored as the ``multicodec-spec`` git submodule.
