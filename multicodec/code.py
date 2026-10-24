@@ -258,6 +258,7 @@ def _get_tag(code: int) -> str:
         "json",
         "rdfc-1",
         "json-jcs",
+        "grid-cbor",
     ):
         return "ipld"
 
@@ -341,6 +342,7 @@ def _get_tag(code: int) -> str:
         "scion",
         "memory",
         "silverpine",
+        "ech",
     ):
         return "multiaddr"
 
@@ -386,6 +388,8 @@ def _get_tag(code: int) -> str:
             "ripemd-",
             "x11",
             "kangarootwelve",
+            "kt-128",
+            "kt-256",
             "sm3-",
             "poseidon-",
             "skein",
@@ -416,6 +420,15 @@ def _get_tag(code: int) -> str:
         "ipfs",
         "swarm",
         "ipns",
+        "adnl",
+        "massa",
+        "massa-mainnet",
+        "massa-buildnet",
+        "massa-deweb",
+        "massa-gossip",
+        "massa-mns",
+        "massa-sc",
+        "massa-gossip-id",
     ):
         return "namespace"
 
@@ -462,6 +475,7 @@ def _get_tag(code: int) -> str:
     if name in (
         "nonstandard-sig",
         "es256k",
+        "bip340",
         "bls12_381-g1-sig",
         "bls12_381-g2-sig",
         "eddsa",
