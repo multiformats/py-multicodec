@@ -4,6 +4,7 @@
 import pytest
 
 from multicodec import RESERVED_END, RESERVED_START, Code, is_reserved, known_codes
+from multicodec.constants import CODECS
 
 
 class CodeTestCase:
@@ -116,6 +117,32 @@ class CodeTestCase:
         # IPLD
         code = Code(0x55)  # raw
         assert code.tag() == "ipld"
+
+        # Multikey
+        code = Code(0xA000)  # chacha20-poly1305
+        assert code.tag() == "multikey"
+
+        # Multisig
+        code = Code(0xD01300)  # es256k-msig
+        assert code.tag() == "multisig"
+        code = Code(0x1A44)  # lamport-sha3-512-sig
+        assert code.tag() == "multisig"
+
+        # Nonce
+        code = Code(0x123B)  # nonce
+        assert code.tag() == "nonce"
+
+        # Shelter
+        code = Code(0x511E00)  # shelter-contract-manifest
+        assert code.tag() == "shelter"
+
+        # Softhash
+        code = Code(0xCC01)  # iscc
+        assert code.tag() == "softhash"
+
+        # Vlad
+        code = Code(0x1207)  # vlad
+        assert code.tag() == "vlad"
 
 
 class ReservedRangeTestCase:
@@ -303,3 +330,42 @@ class CodeTableConstantsTestCase:
         assert int(X25519_PUB) == 0xEC
         assert int(ED25519_PUB) == 0xED
         assert int(ED25519_PRIV) == 0x1300
+
+
+TAG_TEST_CASES = [
+    # (code, expected_tag)
+    (0x12, "multihash"),  # sha2-256
+    (0x04, "multiaddr"),  # ip4
+    (0x70, "ipld"),  # dag-pb
+    (0x01, "cid"),  # cidv1
+    (0x50, "serialization"),  # protobuf
+    (0x30, "multiformat"),  # multicodec
+    (0xE7, "key"),  # secp256k1-pub
+    (0x2F, "namespace"),  # path
+    (0x22, "hash"),  # murmur3-x64-64
+    (0x807124, "holochain"),  # holochain-adr-v0
+    (0x0900, "transport"),  # transport-bitswap
+    (0xD0E7, "varsig"),  # es256k
+    (0xF101, "filecoin"),  # fil-commitment-unsealed
+    (0x2000, "encryption"),  # aes-gcm-256
+    (0xCE11, "zeroxcert"),  # zeroxcert-imprint-256
+    (0x0301, "libp2p"),  # libp2p-peer-record
+    (0xA000, "multikey"),  # chacha20-poly1305
+    (0x123B, "nonce"),  # nonce
+    (0xCC01, "softhash"),  # iscc
+    (0x1207, "vlad"),  # vlad
+    (0xD01300, "multisig"),  # es256k-msig
+    (0x511E00, "shelter"),  # shelter-contract-manifest
+]
+
+
+@pytest.mark.parametrize("code,expected_tag", TAG_TEST_CASES)
+def test_code_tag_all_categories(code, expected_tag):
+    assert Code(code).tag() == expected_tag
+
+
+def test_no_unknown_tags():
+    """Every codec in CODECS should have a recognized tag."""
+    for name, info in CODECS.items():
+        code = Code(info["prefix"])
+        assert code.tag() != "<unknown>", f"Codec {name} (0x{info['prefix']:x}) has unknown tag"

@@ -258,6 +258,7 @@ def _get_tag(code: int) -> str:
         "json",
         "rdfc-1",
         "json-jcs",
+        "grid-cbor",
     ):
         return "ipld"
 
@@ -281,12 +282,17 @@ def _get_tag(code: int) -> str:
             "sm2",
             "mlkem",
             "jwk",
+            "aes-128",
+            "aes-192",
+            "aes-256",
+            "chacha-128",
+            "chacha-256",
         )
     ):
         return "key"
 
     # Libp2p
-    if name in ("libp2p-peer-record", "libp2p-relay-rsvp"):
+    if name in ("libp2p-peer-record", "libp2p-relay-rsvp", "memorytransport"):
         return "libp2p"
 
     # Multiaddr
@@ -335,12 +341,32 @@ def _get_tag(code: int) -> str:
         "plaintextv2",
         "scion",
         "memory",
+        "silverpine",
+        "ech",
     ):
         return "multiaddr"
 
     # Multiformat
-    if name in ("multicodec", "multihash", "multiaddr", "multibase", "varsig"):
+    if name in (
+        "multicodec",
+        "multihash",
+        "multiaddr",
+        "multibase",
+        "varsig",
+        "caip-50",
+        "multidid",
+        "multisig",
+        "multikey",
+    ):
         return "multiformat"
+
+    # Multikey
+    if name == "chacha20-poly1305":
+        return "multikey"
+
+    # Multisig
+    if "-msig" in name or ("lamport-" in name and "-sig" in name):
+        return "multisig"
 
     # Multihash
     if any(
@@ -362,9 +388,15 @@ def _get_tag(code: int) -> str:
             "ripemd-",
             "x11",
             "kangarootwelve",
+            "kt-128",
+            "kt-256",
             "sm3-",
             "poseidon-",
             "skein",
+            "fr32-sha256-trunc254-padbintree",
+            "bittorrent-pieces-root",
+            "bcrypt-pbkdf",
+            "ed2k",
         )
     ):
         return "multihash"
@@ -384,8 +416,25 @@ def _get_tag(code: int) -> str:
         "arweave-ns",
         "subspace-ns",
         "kumandra-ns",
+        "ipld",
+        "ipfs",
+        "swarm",
+        "ipns",
+        "adnl",
+        "massa",
+        "massa-mainnet",
+        "massa-buildnet",
+        "massa-deweb",
+        "massa-gossip",
+        "massa-mns",
+        "massa-sc",
+        "massa-gossip-id",
     ):
         return "namespace"
+
+    # Nonce
+    if name == "nonce":
+        return "nonce"
 
     # Serialization
     if name in (
@@ -399,14 +448,26 @@ def _get_tag(code: int) -> str:
         "ipns-record",
         "x509-certificate",
         "ssz",
+        "provenance-log",
+        "provenance-log-entry",
+        "provenance-log-script",
     ):
         return "serialization"
+
+    # Shelter
+    if name.startswith("shelter-"):
+        return "shelter"
+
+    # Softhash
+    if name == "iscc":
+        return "softhash"
 
     # Transport
     if name in (
         "transport-bitswap",
         "transport-graphsync-filecoinv1",
         "transport-ipfs-gateway-http",
+        "transport-filecoin-piece-http",
     ):
         return "transport"
 
@@ -414,6 +475,7 @@ def _get_tag(code: int) -> str:
     if name in (
         "nonstandard-sig",
         "es256k",
+        "bip340",
         "bls12_381-g1-sig",
         "bls12_381-g2-sig",
         "eddsa",
@@ -424,6 +486,10 @@ def _get_tag(code: int) -> str:
         "rs256",
     ):
         return "varsig"
+
+    # Vlad
+    if name == "vlad":
+        return "vlad"
 
     # Zeroxcert
     if name in ("zeroxcert-imprint-256",):
