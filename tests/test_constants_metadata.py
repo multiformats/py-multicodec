@@ -1,6 +1,6 @@
 """Smoke tests for enriched CODECS metadata from update-table.py."""
 
-from multicodec.constants import CODE_TABLE, CODECS, NAME_TABLE
+from multicodec.constants import CODE_TABLE, CODECS, NAME_TABLE, TAG_TABLE
 
 
 def test_codecs_include_csv_metadata_keys():
@@ -22,3 +22,10 @@ def test_identity_preserves_description():
 def test_name_and_code_tables_still_use_prefix():
     assert NAME_TABLE["sha2-256"] == 0x12
     assert CODE_TABLE[0x12] == "sha2-256"
+
+
+def test_tag_table_matches_codecs():
+    assert TAG_TABLE[0x12] == "multihash"
+    assert len(TAG_TABLE) == len(CODECS)
+    for name, info in CODECS.items():
+        assert TAG_TABLE[info["prefix"]] == info["tag"], name

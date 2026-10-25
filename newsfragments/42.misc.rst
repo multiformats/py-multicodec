@@ -1,0 +1,1 @@
+Add tests verifying ``Code.tag()`` matches the multicodec table for every registered codec.

@@ -117,6 +117,25 @@ class CodeTestCase:
         code = Code(0x55)  # raw
         assert code.tag() == "ipld"
 
+        # Previously missing categories (issue #37)
+        assert Code(0xA000).tag() == "multikey"  # chacha20-poly1305
+        assert Code(0xD01300).tag() == "multisig"  # es256k-msig
+        assert Code(0xD01301).tag() == "multisig"  # bls12_381-g1-msig
+        assert Code(0x123B).tag() == "nonce"
+        assert Code(0x511E00).tag() == "shelter"  # shelter-contract-manifest
+        assert Code(0xCC01).tag() == "softhash"  # iscc
+        assert Code(0x1207).tag() == "vlad"
+
+        # Unknown code
+        assert Code(0x999999).tag() == "<unknown>"
+
+    def test_code_tag_matches_codecs_for_all(self):
+        """Every registered codec's tag() matches CODECS metadata (issue #42)."""
+        from multicodec.constants import CODECS
+
+        for name, info in CODECS.items():
+            assert Code(info["prefix"]).tag() == info["tag"], name
+
     def test_code_status(self):
         """Test Code.status property."""
         # Permanent codec

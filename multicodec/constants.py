@@ -3938,3 +3938,4 @@ CODECS: dict[str, dict[str, Any]] = {
 
 NAME_TABLE: dict[str, int] = {name: cast(int, value["prefix"]) for name, value in CODECS.items()}
 CODE_TABLE: dict[int, str] = {cast(int, value["prefix"]): name for name, value in CODECS.items()}
+TAG_TABLE: dict[int, str] = {cast(int, value["prefix"]): cast(str, value["tag"]) for name, value in CODECS.items()}

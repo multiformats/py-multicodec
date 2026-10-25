@@ -1,0 +1,1 @@
+Return the correct ``multikey``, ``multisig``, ``nonce``, ``shelter``, ``softhash``, and ``vlad`` tags from ``Code.tag()``.

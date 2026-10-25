@@ -1,0 +1,1 @@
+Derive ``Code.tag()`` from the multicodec table so every codec returns its CSV tag.
