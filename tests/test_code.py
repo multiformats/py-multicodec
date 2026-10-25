@@ -117,6 +117,32 @@ class CodeTestCase:
         code = Code(0x55)  # raw
         assert code.tag() == "ipld"
 
+    def test_code_status(self):
+        """Test Code.status property."""
+        # Permanent codec
+        code = Code(0x12)  # sha2-256
+        assert code.status == "permanent"
+
+        # Draft codec
+        code = Code(0x50)  # protobuf
+        assert code.status == "draft"
+
+        # Unknown code
+        unknown = Code(0x999999)
+        assert unknown.status == "<unknown>"
+
+    def test_code_description(self):
+        """Test Code.description property."""
+        code = Code(0x50)  # protobuf
+        assert code.description == "Protocol Buffers"
+
+        code = Code(0x00)  # identity
+        assert code.description == "raw binary"
+
+        # Unknown code returns empty string
+        unknown = Code(0x999999)
+        assert unknown.description == ""
+
 
 class ReservedRangeTestCase:
     """Tests for reserved range constants and functions."""

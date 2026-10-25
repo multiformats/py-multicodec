@@ -9,7 +9,7 @@ This module provides:
 
 from __future__ import annotations
 
-from .constants import CODE_TABLE, NAME_TABLE
+from .constants import CODE_TABLE, CODECS, NAME_TABLE
 
 # ReservedStart is the (inclusive) start of the reserved range of codes that
 # are safe to use for internal purposes.
@@ -165,6 +165,18 @@ class Code:
     def name(self) -> str:
         """Return the codec name, or '<unknown>' if not found."""
         return CODE_TABLE.get(self._value, "<unknown>")
+
+    @property
+    def status(self) -> str:
+        """Return 'permanent', 'draft', 'deprecated', or '<unknown>'."""
+        info = CODECS.get(CODE_TABLE.get(self._value, ""), {})
+        return info.get("status", "<unknown>")
+
+    @property
+    def description(self) -> str:
+        """Return the codec description from the multicodec table."""
+        info = CODECS.get(CODE_TABLE.get(self._value, ""), {})
+        return info.get("description", "")
 
     def tag(self) -> str:
         """

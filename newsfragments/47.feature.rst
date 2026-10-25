@@ -1,0 +1,1 @@
+Add ``Code.status`` and ``Code.description`` properties exposing multicodec table metadata.
