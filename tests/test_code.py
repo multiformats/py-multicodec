@@ -117,6 +117,32 @@ class CodeTestCase:
         code = Code(0x55)  # raw
         assert code.tag() == "ipld"
 
+        # Multikey
+        code = Code(0xA000)  # chacha20-poly1305
+        assert code.tag() == "multikey"
+
+        # Multisig
+        code = Code(0xD01300)  # es256k-msig
+        assert code.tag() == "multisig"
+        code = Code(0x1A44)  # lamport-sha3-512-sig
+        assert code.tag() == "multisig"
+
+        # Nonce
+        code = Code(0x123B)  # nonce
+        assert code.tag() == "nonce"
+
+        # Shelter
+        code = Code(0x511E00)  # shelter-contract-manifest
+        assert code.tag() == "shelter"
+
+        # Softhash
+        code = Code(0xCC01)  # iscc
+        assert code.tag() == "softhash"
+
+        # Vlad
+        code = Code(0x1207)  # vlad
+        assert code.tag() == "vlad"
+
 
 class ReservedRangeTestCase:
     """Tests for reserved range constants and functions."""

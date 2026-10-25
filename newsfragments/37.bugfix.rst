@@ -1,0 +1,1 @@
+Add the missing ``multikey``, ``multisig``, ``nonce``, ``shelter``, ``softhash`` and ``vlad`` tag categories to ``Code.tag()``, so codecs in those groups no longer report an ``<unknown>`` tag.
