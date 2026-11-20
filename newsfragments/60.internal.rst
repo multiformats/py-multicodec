@@ -1,0 +1,1 @@
+Ignore local .worktrees/ directories in linting and git so make pr works for maintainers using git worktrees.

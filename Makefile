@@ -56,7 +56,7 @@ lint:
 	pre-commit run --all-files
 
 fix:
-	python -m ruff check --fix --exclude multicodec-spec --exclude docs/conf.py
+	python -m ruff check --fix
 
 typecheck:
 	pre-commit run mypy-local --all-files

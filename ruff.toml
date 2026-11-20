@@ -6,6 +6,7 @@ exclude = [
     ".ruff_cache",
     ".tox",
     ".venv",
+    ".worktrees",
     "venv",
     "build",
     "dist",
