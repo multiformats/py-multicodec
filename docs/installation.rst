@@ -28,11 +28,15 @@ From sources
 
 The sources for py-multicodec can be downloaded from the `Github repo`_.
 
-You can either clone the public repository:
+You can either clone the public repository (with the ``multicodec-spec`` submodule):
 
 .. code-block:: console
 
-    $ git clone git://github.com/multiformats/py-multicodec
+    $ git clone --recurse-submodules git://github.com/multiformats/py-multicodec
+
+If you already cloned without submodules::
+
+    $ git submodule update --init --recursive
 
 Or download the `tarball`_:
 
@@ -51,6 +55,10 @@ For development, install with dev dependencies:
 .. code-block:: console
 
     $ pip install -e ".[dev]"
+
+When running the full test suite from a git checkout, initialising ``multicodec-spec``
+is required for ``tests/test_spec.py``. Installing from a source tarball without the
+submodule skips that compliance test.
 
 
 .. _Github repo: https://github.com/multiformats/py-multicodec
