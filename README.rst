@@ -80,10 +80,25 @@ management functionality:
 Updating the lookup table
 ==========================
 
-Updating the lookup table is done with a script. The source of truth is the
-`multicodec default table <https://github.com/multiformats/multicodec/blob/master/table.csv>`_.
-Update the table with running:
+Updating the lookup table is done with a script. The authoritative table is vendored
+in the ``multicodec-spec`` git submodule (``table.csv``). After a fresh clone, run
+``git submodule update --init --recursive`` so the submodule and spec compliance test
+are available.
+
+To refresh the registry from upstream, bump the submodule pin and regenerate
+``multicodec/constants.py``:
+
+.. code-block:: shell
+
+    $ git -C multicodec-spec fetch origin
+    $ git -C multicodec-spec checkout origin/master
+    $ git add multicodec-spec
+    $ ./tools/update-table.py < multicodec-spec/table.csv
+
+Alternatively, pipe the latest upstream CSV directly:
 
 .. code-block:: shell
 
     $ curl -X GET https://raw.githubusercontent.com/multiformats/multicodec/master/table.csv | ./tools/update-table.py
+
+Commit the updated ``constants.py`` together with the new submodule commit SHA.

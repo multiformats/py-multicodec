@@ -60,9 +60,13 @@ Get Started!
 Ready to contribute? Here's how to set up `multicodec` for local development.
 
 1. Fork the `py-multicodec` repo on GitHub.
-2. Clone your fork locally::
+2. Clone your fork locally (include the ``multicodec-spec`` submodule)::
 
-    $ git clone git@github.com:your_name_here/py-multicodec.git
+    $ git clone --recurse-submodules git@github.com:your_name_here/py-multicodec.git
+
+   If you already cloned without submodules::
+
+    $ git submodule update --init --recursive
 
 3. Install your local copy into a virtualenv. Create and activate a virtual environment::
 
@@ -113,6 +117,11 @@ The project provides several ``make`` targets to help with development:
 
 * ``make test`` - Run the test suite with pytest using the default Python version.
   For testing across multiple Python versions, use ``tox`` instead.
+
+  The spec compliance test (``tests/test_spec.py``) reads ``multicodec-spec/table.csv``.
+  Initialise the submodule (see step 2) before running the test suite locally.
+  Source tarballs do not include the submodule; that test is skipped unless you are
+  in a git checkout with ``multicodec-spec`` initialised.
 
 * ``make pr`` - Run a complete pre-PR check: clean build artifacts, fix formatting,
   run linting, type checking, and tests. This is the recommended command to run
